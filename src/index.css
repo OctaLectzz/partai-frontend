@@ -1,0 +1,71 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #ffd700;
+  --color-primary-dark: #e6c200;
+  --color-primary-light: #ffea70;
+  --color-dashboard: #f8f9fc;
+  --color-dashboard-dark: #0f1117;
+}
+
+/* Light mode base */
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f9fafb;
+  --color-border: #e2e8f0;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-input-bg: #ffffff;
+  --color-input-border: #d1d5db;
+}
+
+/* Dark mode overrides */
+.dark {
+  --color-bg: #0f1117;
+  --color-surface: #1e2030;
+  --color-surface-hover: #252840;
+  --color-border: #2e3348;
+  --color-text: #f1f5f9;
+  --color-text-muted: #94a3b8;
+  --color-input-bg: #1e2030;
+  --color-input-border: #2e3348;
+}
+
+body {
+  font-family:
+    'Inter',
+    system-ui,
+    -apple-system,
+    sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+/* Custom Scrollbar */
+.scrollbar-custom::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.dark .scrollbar-custom::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.dark .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
