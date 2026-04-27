@@ -95,6 +95,25 @@ export default {
       createSubtitle: 'Isi formulir di bawah ini untuk menambahkan event baru.',
       editSubtitle: 'Perbarui informasi event yang sudah ada.'
     },
+    detail: {
+      title: 'Detail Event',
+      subtitle: 'Informasi detail dan link pendaftaran event.',
+      dateLabel: 'Tanggal',
+      timeLabel: 'Waktu',
+      locationLabel: 'Lokasi',
+      organizerLabel: 'Penyelenggara',
+      descriptionLabel: 'Deskripsi Lengkap',
+      registrationLink: {
+        title: 'Link Pendaftaran',
+        subtitle: 'Bagikan link ini kepada calon peserta.',
+        info: 'Klik tombol di kanan untuk membuka form pendaftaran.'
+      },
+      participantStatus: {
+        title: 'Status Peserta',
+        registered: 'Terdaftar',
+        capacity: 'Kapasitas'
+      }
+    },
     validate: {
       categoryRequired: 'Kategori wajib diisi.',
       nameRequired: 'Nama event wajib diisi.',
@@ -133,9 +152,7 @@ export default {
     },
     deleteConfirm: {
       title: 'Hapus Event',
-      message: 'Apakah Anda yakin ingin menghapus event ini? Tindakan ini tidak dapat dibatalkan.',
-      confirm: 'Ya, Hapus',
-      cancel: 'Batal'
+      message: 'Apakah Anda yakin ingin menghapus event ini? Tindakan ini tidak dapat dibatalkan.'
     },
     table: {
       title: 'Daftar Event',

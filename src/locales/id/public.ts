@@ -7,5 +7,8 @@ export default {
   backText: 'Kembali',
   confirmDeleteText: 'Ya, Hapus',
   resetText: 'Reset Filter',
+  copyTooltip: 'Salin Link',
+  copySuccess: 'Link berhasil disalin!',
+  openTooltip: 'Buka Link',
   actionText: 'Tindakan'
 }

@@ -95,6 +95,25 @@ export default {
       createSubtitle: 'Fill in the form below to add a new event.',
       editSubtitle: 'Update existing event information.'
     },
+    detail: {
+      title: 'Event Detail',
+      subtitle: 'Detail information and event registration link.',
+      dateLabel: 'Date',
+      timeLabel: 'Time',
+      locationLabel: 'Location',
+      organizerLabel: 'Organizer',
+      descriptionLabel: 'Full Description',
+      registrationLink: {
+        title: 'Registration Link',
+        subtitle: 'Share this link with potential participants.',
+        info: 'Click the button on the right to open the registration form.'
+      },
+      participantStatus: {
+        title: 'Status Participants',
+        registered: 'Registered',
+        capacity: 'Capacity'
+      }
+    },
     validate: {
       categoryRequired: 'Category is required.',
       nameRequired: 'Event name is required.',
@@ -133,9 +152,7 @@ export default {
     },
     deleteConfirm: {
       title: 'Delete Event',
-      message: 'Are you sure you want to delete this event? This action cannot be undone.',
-      confirm: 'Yes, Delete',
-      cancel: 'Cancel'
+      message: 'Are you sure you want to delete this event? This action cannot be undone.'
     },
     table: {
       title: 'Event List',

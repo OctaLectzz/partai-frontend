@@ -7,5 +7,8 @@ export default {
   backText: 'Back',
   confirmDeleteText: 'Yes, Delete',
   resetText: 'Reset Filter',
+  copyTooltip: 'Copy Link',
+  copySuccess: 'Link copied successfully!',
+  openTooltip: 'Open Link',
   actionText: 'Actions'
 }

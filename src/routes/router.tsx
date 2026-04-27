@@ -12,12 +12,15 @@ import DashboardLayout from '@/layouts/dashboard-layout'
 import MainLayout from '@/layouts/main-layout'
 
 // Pages
+import Main from '@/pages/main'
+
 import Login from '@/pages/auth/login'
 import Register from '@/pages/auth/register'
+
 import Index from '@/pages/dashboard'
 import EventManagement from '@/pages/dashboard/event-management'
 import EventForm from '@/pages/dashboard/event-management/form'
-import Main from '@/pages/main'
+import EventDetail from '@/pages/dashboard/event-management/show'
 
 export const router = createBrowserRouter([
   {
@@ -68,7 +71,8 @@ export const router = createBrowserRouter([
                 children: [
                   { index: true, element: <EventManagement /> },
                   { path: 'create', element: <EventForm /> },
-                  { path: ':slug/edit', element: <EventForm /> }
+                  { path: 'edit/:slug', element: <EventForm /> },
+                  { path: 'show/:slug', element: <EventDetail /> }
                 ]
               }
             ]

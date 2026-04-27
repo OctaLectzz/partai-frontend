@@ -111,14 +111,16 @@ export const getColumns = (t: TFunction, onDelete: (slug: string, name: string) 
     header: () => <span className="block text-center">{t('dashboard.events.table.headers.actions')}</span>,
     cell: (info) => (
       <div className="flex items-center justify-center gap-1">
-        <Button
-          variant="ghost"
-          size="sm"
-          className="h-9 w-9 p-0 text-slate-400 hover:bg-blue-50 hover:text-blue-600"
-          icon={<Eye className="h-4 w-4" />}
-        />
+        <Link to={`/dashboard/events/show/${info.row.original.slug}`}>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="h-9 w-9 p-0 text-slate-400 hover:bg-blue-50 hover:text-blue-600"
+            icon={<Eye className="h-4 w-4" />}
+          />
+        </Link>
 
-        <Link to={`/dashboard/events/${info.row.original.slug}/edit`}>
+        <Link to={`/dashboard/events/edit/${info.row.original.slug}`}>
           <Button
             variant="ghost"
             size="sm"
