@@ -1,5 +1,6 @@
+import { cn } from '@/lib/utils'
 import { X } from 'lucide-react'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 interface ModalProps {
@@ -11,7 +12,6 @@ interface ModalProps {
 }
 
 export function Modal({ isOpen, onClose, title, children, className = '' }: ModalProps) {
-  const modalRef = useRef<HTMLDivElement>(null)
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -36,21 +36,15 @@ export function Modal({ isOpen, onClose, title, children, className = '' }: Moda
   return createPortal(
     <div className="fixed inset-0 z-9999 flex items-center justify-center p-4">
       {/* Backdrop */}
-      <div
-        className="animate-in fade-in absolute inset-0 bg-black/40 backdrop-blur-sm duration-200"
-        onClick={onClose}
-      />
+      <div className="animate-in fade-in absolute inset-0 bg-black/40 backdrop-blur-sm duration-200" onClick={onClose} />
 
       {/* Content */}
-      <div
-        ref={modalRef}
-        className={`animate-in fade-in zoom-in-95 relative w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl duration-200 dark:bg-gray-900 ${className}`}
-      >
+      <div className={cn('animate-in fade-in zoom-in-95 bg-card relative w-full max-w-md rounded-2xl p-6 shadow-2xl duration-200', className)}>
         <div className="mb-4 flex items-center justify-between">
-          {title && <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">{title}</h3>}
+          {title && <h3 className="text-foreground text-lg font-bold">{title}</h3>}
           <button
             onClick={onClose}
-            className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-800 dark:hover:text-gray-100"
+            className="text-muted hover:bg-card-hover hover:text-foreground flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg transition-colors"
           >
             <X size={20} />
           </button>

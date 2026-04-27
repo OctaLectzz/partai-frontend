@@ -1,4 +1,13 @@
 export default {
+  common: {
+    pagination: {
+      perPage: 'Entries per page',
+      showing: 'Showing',
+      to: 'to',
+      of: 'of',
+      entries: 'entries'
+    }
+  },
   user: {
     response: {
       successCreateMsg: 'User created successfully!',
@@ -46,5 +55,101 @@ export default {
     message: 'Are you sure you want to log out of your account?',
     cancel: 'Cancel',
     confirm: 'Log Out'
+  },
+  events: {
+    title: 'Event Management',
+    subtitle: 'Manage Golkar Party events and activities',
+    createNew: 'Create New Event',
+    response: {
+      successCreateMsg: 'Event created successfully!',
+      failedCreateMsg: 'Failed to create event.',
+      successUpdateMsg: 'Event updated successfully!',
+      failedUpdateMsg: 'Failed to update event.',
+      successDeleteMsg: 'Event deleted successfully!',
+      failedDeleteMsg: 'Failed to delete event.'
+    },
+    form: {
+      nameLabel: 'Event Name',
+      namePlaceholder: 'Example: Regional Coordination Meeting',
+      descriptionLabel: 'Event Description',
+      descriptionPlaceholder: 'Describe the purpose and agenda of the event...',
+      startDateLabel: 'Start Date',
+      startTimeLabel: 'Start Time',
+      endDateLabel: 'End Date',
+      endTimeLabel: 'End Time',
+      locationLabel: 'Location',
+      locationPlaceholder: 'Search location or enter address...',
+      organizerLabel: 'Organizer',
+      organizerPlaceholder: 'DPD Jakarta Pusat',
+      targetParticipantsLabel: 'Target Participants',
+      targetParticipantsPlaceholder: 'Number of participants (e.g., 100)',
+      categoryLabel: 'Event Category',
+      categoryPlaceholder: 'Select Category',
+      statusLabel: 'Initial Status',
+      statusPlaceholder: 'Select Status',
+      submitCreate: 'Save Event',
+      submitUpdate: 'Update Event',
+      backToList: 'Back to Event List',
+      editTitle: 'Edit Event',
+      createTitle: 'Create New Event',
+      createSubtitle: 'Fill in the form below to add a new event.',
+      editSubtitle: 'Update existing event information.'
+    },
+    validate: {
+      categoryRequired: 'Category is required.',
+      nameRequired: 'Event name is required.',
+      nameMax: 'Event name must not exceed 255 characters.',
+      descriptionRequired: 'Description is required.',
+      organizerRequired: 'Organizer is required.',
+      organizerMax: 'Organizer must not exceed 255 characters.',
+      targetParticipantsRequired: 'Target participants is required.',
+      targetParticipantsMin: 'Target participants must be at least 1.',
+      startDateRequired: 'Start date is required.',
+      startTimeRequired: 'Start time is required.',
+      endDateRequired: 'End date is required.',
+      endTimeRequired: 'End time is required.',
+      locationRequired: 'Location is required.',
+      locationMax: 'Location must not exceed 255 characters.',
+      statusRequired: 'Status is required.'
+    },
+    filter: {
+      searchPlaceholder: 'Search events...',
+      searchStatusPlaceholder: 'Search status...',
+      searchCategoryPlaceholder: 'Search category...',
+      allStatuses: 'All Statuses',
+      allCategories: 'All Categories'
+    },
+    status: {
+      draft: 'Draft',
+      published: 'Published',
+      completed: 'Completed',
+      cancelled: 'Cancelled'
+    },
+    summary: {
+      totalEvents: 'Total Events',
+      upcoming: 'Upcoming',
+      totalParticipants: 'Total Participants',
+      avgAttendance: 'Avg. Attendance'
+    },
+    deleteConfirm: {
+      title: 'Delete Event',
+      message: 'Are you sure you want to delete this event? This action cannot be undone.',
+      confirm: 'Yes, Delete',
+      cancel: 'Cancel'
+    },
+    table: {
+      title: 'Event List',
+      subtitle: 'Manage and monitor all created events',
+      emptyMessage: 'No events found.',
+      headers: {
+        event: 'Event',
+        dateTime: 'Date & Time',
+        location: 'Location',
+        organizer: 'Organizer',
+        participants: 'Participants',
+        status: 'Status',
+        actions: 'Actions'
+      }
+    }
   }
 }

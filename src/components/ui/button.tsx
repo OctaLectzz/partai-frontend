@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils'
 import { Loader2 } from 'lucide-react'
 import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react'
 
@@ -9,30 +10,15 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    {
-      variant = 'primary',
-      size = 'md',
-      isLoading = false,
-      icon,
-      children,
-      className = '',
-      disabled,
-      ...props
-    },
-    ref
-  ) => {
+  ({ variant = 'primary', size = 'md', isLoading = false, icon, children, className = '', disabled, ...props }, ref) => {
     const baseClasses =
       'inline-flex items-center justify-center font-semibold tracking-wider uppercase rounded-xl transition-all duration-200 outline-none disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer'
 
     const variantClasses = {
-      primary:
-        'bg-primary text-gray-900 hover:bg-primary-dark active:scale-[0.98] shadow-lg shadow-primary/20',
+      primary: 'bg-primary text-gray-900 hover:bg-primary-dark active:scale-[0.98] shadow-lg shadow-primary/20',
       secondary: 'bg-gray-700 text-white hover:bg-gray-600 active:scale-[0.98]',
-      outline:
-        'border-2 border-primary text-primary hover:bg-primary hover:text-gray-900 active:scale-[0.98]',
-      ghost:
-        'text-[var(--color-text-muted)] hover:bg-[var(--color-surface-hover)] hover:text-[var(--color-text)] active:scale-[0.98]',
+      outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-gray-900 active:scale-[0.98]',
+      ghost: 'text-muted hover:bg-card-hover hover:text-foreground active:scale-[0.98]',
       danger: 'bg-red-600 text-white hover:bg-red-700 active:scale-[0.98]'
     }
 
@@ -45,7 +31,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         ref={ref}
-        className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
+        className={cn(baseClasses, variantClasses[variant], sizeClasses[size], className)}
         disabled={disabled || isLoading}
         {...props}
       >

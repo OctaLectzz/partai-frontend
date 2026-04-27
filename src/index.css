@@ -8,6 +8,11 @@
   --color-primary-light: #ffea70;
   --color-dashboard: #f8f9fc;
   --color-dashboard-dark: #0f1117;
+  --color-card: var(--color-card);
+  --color-card-border: var(--color-card-border);
+  --color-card-hover: var(--color-surface-hover);
+  --color-foreground: var(--color-text);
+  --color-muted: var(--color-text-muted);
 }
 
 /* Light mode base */
@@ -20,6 +25,8 @@
   --color-text-muted: #64748b;
   --color-input-bg: #ffffff;
   --color-input-border: #d1d5db;
+  --color-card: #ffffff;
+  --color-card-border: #e2e8f0;
 }
 
 /* Dark mode overrides */
@@ -32,6 +39,8 @@
   --color-text-muted: #94a3b8;
   --color-input-bg: #1e2030;
   --color-input-border: #2e3348;
+  --color-card: #1e2030;
+  --color-card-border: #2e3348;
 }
 
 body {

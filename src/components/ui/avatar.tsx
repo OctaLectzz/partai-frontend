@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils'
 import { getInitials } from '@/utils/get-initials'
 
 interface AvatarProps {
@@ -16,13 +17,13 @@ export function Avatar({ name, photo, size = 'md', className = '' }: AvatarProps
 
   return (
     <div
-      className={`${sizeClasses[size]} bg-primary shadow-primary/20 flex items-center justify-center overflow-hidden rounded-full font-bold text-gray-900 shadow-sm ${className}`}
-    >
-      {photo ? (
-        <img src={photo} alt={name || 'User'} className="h-full w-full object-cover" />
-      ) : (
-        <span>{getInitials(name)}</span>
+      className={cn(
+        sizeClasses[size],
+        'bg-primary shadow-primary/20 flex items-center justify-center overflow-hidden rounded-full font-bold text-gray-900 shadow-sm',
+        className
       )}
+    >
+      {photo ? <img src={photo} alt={name || 'User'} className="h-full w-full object-cover" /> : <span>{getInitials(name)}</span>}
     </div>
   )
 }

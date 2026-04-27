@@ -15,6 +15,8 @@ import MainLayout from '@/layouts/main-layout'
 import Login from '@/pages/auth/login'
 import Register from '@/pages/auth/register'
 import Index from '@/pages/dashboard'
+import EventManagement from '@/pages/dashboard/event-management'
+import EventForm from '@/pages/dashboard/event-management/form'
 import Main from '@/pages/main'
 
 export const router = createBrowserRouter([
@@ -59,7 +61,17 @@ export const router = createBrowserRouter([
           {
             path: '',
             element: <DashboardLayout />,
-            children: [{ index: true, element: <Index /> }]
+            children: [
+              { index: true, element: <Index /> },
+              {
+                path: 'events',
+                children: [
+                  { index: true, element: <EventManagement /> },
+                  { path: 'create', element: <EventForm /> },
+                  { path: ':slug/edit', element: <EventForm /> }
+                ]
+              }
+            ]
           }
         ]
       }

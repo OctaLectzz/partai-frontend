@@ -4,5 +4,8 @@ export default {
   searchText: 'Search',
   selectText: 'Select',
   cancelText: 'Cancel',
+  backText: 'Back',
+  confirmDeleteText: 'Yes, Delete',
+  resetText: 'Reset Filter',
   actionText: 'Actions'
 }
