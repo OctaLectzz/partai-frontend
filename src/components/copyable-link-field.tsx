@@ -19,9 +19,9 @@ export function CopyableLinkField({ link, variant = 'default' }: CopyableLinkFie
   }
 
   const variantStyles = {
-    amber: 'hover:bg-amber-100 hover:text-amber-700',
-    blue: 'hover:bg-blue-100 hover:text-blue-700',
-    default: 'hover:bg-slate-100 hover:text-slate-900'
+    amber: 'hover:bg-amber-100 hover:text-amber-700 dark:hover:bg-amber-900/30 dark:hover:text-amber-400',
+    blue: 'hover:bg-blue-100 hover:text-blue-700 dark:hover:bg-blue-900/30 dark:hover:text-blue-400',
+    default: 'hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-100'
   }
 
   const currentStyles = variantStyles[variant]

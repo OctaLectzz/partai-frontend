@@ -1,3 +1,4 @@
+import { Card } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
 import { cn } from '@/lib/utils'
 import { flexRender, type ColumnDef, type Table as TanStackTable } from '@tanstack/react-table'
@@ -37,8 +38,8 @@ export function DataTable<TData>({
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="border-card-border bg-card relative rounded-xl border shadow-sm">
-        {headerSlot && <div className="border-primary border-t-4 border-b p-6">{headerSlot}</div>}
+      <Card className="shadow-2xl">
+        {headerSlot && <div className="p-6">{headerSlot}</div>}
 
         <div className="overflow-x-auto rounded-b-xl">
           <table className="text-muted w-full text-left text-sm">
@@ -90,13 +91,13 @@ export function DataTable<TData>({
             </tbody>
           </table>
         </div>
-      </div>
+      </Card>
 
       {/* Pagination Footer */}
       <div className="flex flex-wrap items-center justify-between gap-4 px-2">
         <div className="text-muted flex items-center gap-4 text-sm">
           <div className="flex items-center gap-2">
-            <span>{t('dashboard.common.pagination.perPage')}:</span>
+            <span>{t('dashboard.pagination.perPage')}:</span>
             <select
               value={pageSize}
               onChange={(e) => table.setPageSize(Number(e.target.value))}
@@ -110,9 +111,9 @@ export function DataTable<TData>({
             </select>
           </div>
           <span>
-            {t('dashboard.common.pagination.showing')} <span className="text-foreground font-semibold">{from}</span>{' '}
-            {t('dashboard.common.pagination.to')} <span className="text-foreground font-semibold">{to}</span> {t('dashboard.common.pagination.of')}{' '}
-            <span className="text-foreground font-semibold">{totalRows}</span> {t('dashboard.common.pagination.entries')}
+            {t('dashboard.pagination.showing')} <span className="text-foreground font-semibold">{from}</span> {t('dashboard.pagination.to')}{' '}
+            <span className="text-foreground font-semibold">{to}</span> {t('dashboard.pagination.of')}{' '}
+            <span className="text-foreground font-semibold">{totalRows}</span> {t('dashboard.pagination.entries')}
           </span>
         </div>
 

@@ -1,12 +1,32 @@
 export default {
-  common: {
-    pagination: {
-      perPage: 'Entri per halaman',
-      showing: 'Menampilkan',
-      to: 'sampai',
-      of: 'dari',
-      entries: 'entri'
-    }
+  pagination: {
+    perPage: 'Entri per halaman',
+    showing: 'Menampilkan',
+    to: 'sampai',
+    of: 'dari',
+    entries: 'entri'
+  },
+  sidebar: {
+    label: 'Menu Utama',
+    dashboard: 'Dashboard',
+    events: 'Manajemen Event',
+    reports: 'Form Laporan Dewan',
+    qr: 'Sistem QR & Check-in',
+    gis: 'WebGIS',
+    kta: 'Digitalisasi KTA',
+    wa: 'WhatsApp Blasting',
+    social: 'Social Media',
+    logout: 'Keluar'
+  },
+  navbar: {
+    profile: 'Profil Saya',
+    settings: 'Pengaturan'
+  },
+  logoutConfirm: {
+    title: 'Konfirmasi Keluar',
+    message: 'Apakah Anda yakin ingin keluar dari akun Anda?',
+    cancel: 'Batal',
+    confirm: 'Keluar'
   },
   user: {
     response: {
@@ -34,28 +54,6 @@ export default {
       postalCodeMax: 'Kode pos tidak boleh lebih dari 5 karakter.'
     }
   },
-  sidebar: {
-    label: 'Menu Utama',
-    dashboard: 'Dashboard',
-    events: 'Manajemen Event',
-    reports: 'Form Laporan Dewan',
-    qr: 'Sistem QR & Check-in',
-    gis: 'WebGIS',
-    kta: 'Digitalisasi KTA',
-    wa: 'WhatsApp Blasting',
-    social: 'Social Media',
-    logout: 'Keluar'
-  },
-  navbar: {
-    profile: 'Profil Saya',
-    settings: 'Pengaturan'
-  },
-  logoutConfirm: {
-    title: 'Konfirmasi Keluar',
-    message: 'Apakah Anda yakin ingin keluar dari akun Anda?',
-    cancel: 'Batal',
-    confirm: 'Keluar'
-  },
   events: {
     title: 'Manajemen Event',
     subtitle: 'Kelola event dan kegiatan Partai Golkar',
@@ -67,6 +65,23 @@ export default {
       failedUpdateMsg: 'Gagal memperbarui event.',
       successDeleteMsg: 'Event berhasil dihapus!',
       failedDeleteMsg: 'Gagal menghapus event.'
+    },
+    validate: {
+      categoryRequired: 'Kategori wajib diisi.',
+      nameRequired: 'Nama event wajib diisi.',
+      nameMax: 'Nama event tidak boleh lebih dari 255 karakter.',
+      descriptionRequired: 'Deskripsi wajib diisi.',
+      organizerRequired: 'Penyelenggara wajib diisi.',
+      organizerMax: 'Penyelenggara tidak boleh lebih dari 255 karakter.',
+      targetParticipantsRequired: 'Target peserta wajib diisi.',
+      targetParticipantsMin: 'Target peserta minimal 1.',
+      startDateRequired: 'Tanggal mulai wajib diisi.',
+      startTimeRequired: 'Waktu mulai wajib diisi.',
+      endDateRequired: 'Tanggal selesai wajib diisi.',
+      endTimeRequired: 'Waktu selesai wajib diisi.',
+      locationRequired: 'Lokasi wajib diisi.',
+      locationMax: 'Lokasi tidak boleh lebih dari 255 karakter.',
+      statusRequired: 'Status wajib diisi.'
     },
     form: {
       nameLabel: 'Nama Event',
@@ -114,23 +129,6 @@ export default {
         capacity: 'Kapasitas'
       }
     },
-    validate: {
-      categoryRequired: 'Kategori wajib diisi.',
-      nameRequired: 'Nama event wajib diisi.',
-      nameMax: 'Nama event tidak boleh lebih dari 255 karakter.',
-      descriptionRequired: 'Deskripsi wajib diisi.',
-      organizerRequired: 'Penyelenggara wajib diisi.',
-      organizerMax: 'Penyelenggara tidak boleh lebih dari 255 karakter.',
-      targetParticipantsRequired: 'Target peserta wajib diisi.',
-      targetParticipantsMin: 'Target peserta minimal 1.',
-      startDateRequired: 'Tanggal mulai wajib diisi.',
-      startTimeRequired: 'Waktu mulai wajib diisi.',
-      endDateRequired: 'Tanggal selesai wajib diisi.',
-      endTimeRequired: 'Waktu selesai wajib diisi.',
-      locationRequired: 'Lokasi wajib diisi.',
-      locationMax: 'Lokasi tidak boleh lebih dari 255 karakter.',
-      statusRequired: 'Status wajib diisi.'
-    },
     filter: {
       searchPlaceholder: 'Cari event...',
       searchStatusPlaceholder: 'Cari status...',
@@ -166,6 +164,26 @@ export default {
         participants: 'Peserta',
         status: 'Status',
         actions: 'Aksi'
+      }
+    },
+    participants: {
+      title: 'Daftar Peserta',
+      subtitle: 'Daftar semua peserta yang terdaftar pada event ini.',
+      code: 'Kode',
+      name: 'Nama',
+      nik: 'NIK',
+      email: 'Email',
+      whatsapp: 'WhatsApp',
+      status: 'Status',
+      registeredAt: 'Tgl Terdaftar',
+      statusLabel: {
+        registered: 'Terdaftar',
+        attended: 'Hadir'
+      },
+      filter: {
+        searchPlaceholder: 'Cari nama, NIK, atau email...',
+        allStatuses: 'Semua Status',
+        searchStatusPlaceholder: 'Cari status...'
       }
     }
   }

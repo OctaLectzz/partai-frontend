@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 const columnHelper = createColumnHelper<Event>()
 
 const STATUS_COLORS: Record<string, string> = {
-  draft: 'bg-slate-200 text-slate-700',
+  draft: 'bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300',
   published: 'bg-blue-500 text-white shadow-sm shadow-blue-500/20',
   completed: 'bg-emerald-500 text-white shadow-sm shadow-emerald-500/20',
   cancelled: 'bg-red-500 text-white shadow-sm shadow-red-500/20'
@@ -72,7 +72,7 @@ export const getColumns = (t: TFunction, onDelete: (slug: string, name: string) 
             {count} / {target || '-'}
           </span>
           {target && (
-            <div className="h-1.5 w-24 overflow-hidden rounded-full bg-slate-100">
+            <div className="h-1.5 w-24 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
               <div className="bg-primary h-full rounded-full" style={{ width: `${pct}%` }} />
             </div>
           )}
@@ -88,7 +88,7 @@ export const getColumns = (t: TFunction, onDelete: (slug: string, name: string) 
       return (
         <div className="text-center">
           <span
-            className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold ${STATUS_COLORS[status] || 'bg-slate-200 text-slate-600'}`}
+            className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold ${STATUS_COLORS[status] || 'bg-slate-200 text-slate-600 dark:bg-slate-800 dark:text-slate-400'}`}
           >
             {t(`dashboard.events.status.${status}`)}
           </span>
@@ -115,7 +115,7 @@ export const getColumns = (t: TFunction, onDelete: (slug: string, name: string) 
           <Button
             variant="ghost"
             size="sm"
-            className="h-9 w-9 p-0 text-slate-400 hover:bg-blue-50 hover:text-blue-600"
+            className="h-9 w-9 p-0 text-slate-400 hover:bg-blue-50 hover:text-blue-600 dark:hover:bg-blue-900/30 dark:hover:text-blue-400"
             icon={<Eye className="h-4 w-4" />}
           />
         </Link>
@@ -124,7 +124,7 @@ export const getColumns = (t: TFunction, onDelete: (slug: string, name: string) 
           <Button
             variant="ghost"
             size="sm"
-            className="h-9 w-9 p-0 text-slate-400 hover:bg-amber-50 hover:text-amber-600"
+            className="h-9 w-9 p-0 text-slate-400 hover:bg-amber-50 hover:text-amber-600 dark:hover:bg-amber-900/30 dark:hover:text-amber-400"
             icon={<Edit className="h-4 w-4" />}
           />
         </Link>
@@ -133,7 +133,7 @@ export const getColumns = (t: TFunction, onDelete: (slug: string, name: string) 
           variant="ghost"
           size="sm"
           onClick={() => onDelete(info.row.original.slug, info.row.original.name)}
-          className="h-9 w-9 p-0 text-slate-400 hover:bg-red-50 hover:text-red-600"
+          className="h-9 w-9 p-0 text-slate-400 hover:bg-red-50 hover:text-red-600 dark:hover:bg-red-900/30 dark:hover:text-red-400"
           icon={<Trash2 className="h-4 w-4" />}
         />
       </div>

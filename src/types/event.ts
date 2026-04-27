@@ -5,6 +5,24 @@ export interface EventCategory {
   description: string | null
 }
 
+export interface EventParticipant {
+  id: number
+  event_id: number
+  participant_code: string
+  name: string
+  nik: string
+  email: string
+  whatsapp_number: string
+  province_id: string
+  regency_id: string
+  district_id: string
+  village_id: string
+  message: string | null
+  status: string
+  created_at: string
+  updated_at: string
+}
+
 export interface Event {
   id: number
   category_id: number
@@ -13,6 +31,7 @@ export interface Event {
   slug: string
   description: string | null
   organizer: string
+  participants?: EventParticipant[]
   participants_count?: number
   target_participants: number | null
   start_date: string

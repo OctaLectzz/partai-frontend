@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Select } from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
@@ -103,9 +104,7 @@ export default function EventForm() {
       </div>
 
       {/* Form Card */}
-      <div className="bg-card border-card-border relative overflow-hidden rounded-2xl border shadow-xl">
-        <div className="bg-primary absolute top-0 left-0 h-1.5 w-full" />
-
+      <Card className="shadow-xl">
         <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 gap-8 p-8 lg:grid-cols-3">
           {/* Main Content (Left Column) */}
           <div className="flex flex-col gap-6 lg:col-span-2">
@@ -262,7 +261,7 @@ export default function EventForm() {
             </div>
           </div>
         </form>
-      </div>
+      </Card>
     </div>
   )
 }

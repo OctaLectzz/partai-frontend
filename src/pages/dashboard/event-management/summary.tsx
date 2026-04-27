@@ -1,4 +1,4 @@
-import { SummaryCard } from '@/components/ui/summary-card'
+import { SummaryCard } from '@/components/summary-card'
 import type { Event } from '@/types/event'
 import type { TFunction } from 'i18next'
 import { useMemo } from 'react'

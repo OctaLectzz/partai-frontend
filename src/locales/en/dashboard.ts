@@ -1,12 +1,10 @@
 export default {
-  common: {
-    pagination: {
-      perPage: 'Entries per page',
-      showing: 'Showing',
-      to: 'to',
-      of: 'of',
-      entries: 'entries'
-    }
+  pagination: {
+    perPage: 'Entries per page',
+    showing: 'Showing',
+    to: 'to',
+    of: 'of',
+    entries: 'entries'
   },
   user: {
     response: {
@@ -166,6 +164,27 @@ export default {
         participants: 'Participants',
         status: 'Status',
         actions: 'Actions'
+      }
+    },
+    participants: {
+      title: 'Participant List',
+      subtitle: 'List of all participants registered for this event.',
+      emptyMessage: 'No participants found.',
+      code: 'Code',
+      name: 'Name',
+      nik: 'NIK',
+      email: 'Email',
+      whatsapp: 'WhatsApp',
+      status: 'Status',
+      registeredAt: 'Reg. At',
+      statusLabel: {
+        registered: 'Registered',
+        attended: 'Attended'
+      },
+      filter: {
+        searchPlaceholder: 'Search name, NIK, or email...',
+        allStatuses: 'All Statuses',
+        searchStatusPlaceholder: 'Search status...'
       }
     }
   }
