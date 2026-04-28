@@ -10,5 +10,7 @@ export default {
   copyTooltip: 'Copy Link',
   copySuccess: 'Link copied successfully!',
   openTooltip: 'Open Link',
-  actionText: 'Actions'
+  actionText: 'Actions',
+  allStatuses: 'All Statuses',
+  searchStatusPlaceholder: 'Search status...'
 }

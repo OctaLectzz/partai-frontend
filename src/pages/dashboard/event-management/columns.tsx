@@ -17,7 +17,7 @@ const STATUS_COLORS: Record<string, string> = {
 
 export const getColumns = (t: TFunction, onDelete: (slug: string, name: string) => void) => [
   columnHelper.accessor('name', {
-    header: () => t('dashboard.events.table.headers.event'),
+    header: () => t('dashboard.events.table.event'),
     cell: (info) => (
       <div className="flex flex-col gap-0.5">
         <LongText align="left" className="text-foreground w-48 font-bold">
@@ -32,7 +32,7 @@ export const getColumns = (t: TFunction, onDelete: (slug: string, name: string) 
     )
   }),
   columnHelper.accessor('start_date', {
-    header: () => t('dashboard.events.table.headers.dateTime'),
+    header: () => t('dashboard.events.table.dateTime'),
     cell: (info) => (
       <div className="flex items-center gap-2 whitespace-nowrap">
         <Calendar className="text-muted h-4 w-4" />
@@ -44,7 +44,7 @@ export const getColumns = (t: TFunction, onDelete: (slug: string, name: string) 
     )
   }),
   columnHelper.accessor('location', {
-    header: () => t('dashboard.events.table.headers.location'),
+    header: () => t('dashboard.events.table.location'),
     cell: (info) => (
       <div className="flex items-start gap-2">
         <MapPin className="text-muted mt-0.5 h-4 w-4 shrink-0" />
@@ -55,11 +55,11 @@ export const getColumns = (t: TFunction, onDelete: (slug: string, name: string) 
     )
   }),
   columnHelper.accessor('organizer', {
-    header: () => t('dashboard.events.table.headers.organizer'),
+    header: () => t('dashboard.events.table.organizer'),
     cell: (info) => <span>{info.getValue()}</span>
   }),
   columnHelper.accessor('participants_count', {
-    header: () => t('dashboard.events.table.headers.participants'),
+    header: () => t('dashboard.events.table.participants'),
     cell: (info) => {
       const event = info.row.original
       const count = info.getValue() || 0
@@ -81,7 +81,7 @@ export const getColumns = (t: TFunction, onDelete: (slug: string, name: string) 
     }
   }),
   columnHelper.accessor('status', {
-    header: () => <span className="block text-center">{t('dashboard.events.table.headers.status')}</span>,
+    header: () => <span className="block text-center">{t('dashboard.events.table.status')}</span>,
     filterFn: 'arrIncludesSome',
     cell: (info) => {
       const status = info.getValue()
@@ -108,7 +108,7 @@ export const getColumns = (t: TFunction, onDelete: (slug: string, name: string) 
   }),
   columnHelper.display({
     id: 'actions',
-    header: () => <span className="block text-center">{t('dashboard.events.table.headers.actions')}</span>,
+    header: () => <span className="block text-center">{t('dashboard.events.table.actions')}</span>,
     cell: (info) => (
       <div className="flex items-center justify-center gap-1">
         <Link to={`/dashboard/events/show/${info.row.original.slug}`}>

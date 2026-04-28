@@ -67,7 +67,7 @@ export function EventFilterSection({ t, globalFilter, onGlobalFilterChange, colu
         <div className="min-w-[300px] flex-1">
           <Input
             icon={<Search size={18} />}
-            placeholder={t('dashboard.events.filter.searchPlaceholder')}
+            placeholder={t('dashboard.events.searchPlaceholder')}
             value={globalFilter}
             onChange={(e) => onGlobalFilterChange(e.target.value)}
           />
@@ -80,8 +80,8 @@ export function EventFilterSection({ t, globalFilter, onGlobalFilterChange, colu
             value={statusFilter}
             onChange={handleStatusChange}
             isMultiple
-            placeholder={t('dashboard.events.filter.allStatuses')}
-            searchPlaceholder={t('dashboard.events.filter.searchStatusPlaceholder')}
+            placeholder={t('public.allStatuses')}
+            searchPlaceholder={t('public.searchStatusPlaceholder')}
             noOptionsMessage={t('dashboard.events.table.emptyMessage')}
           />
         </div>
@@ -93,8 +93,8 @@ export function EventFilterSection({ t, globalFilter, onGlobalFilterChange, colu
             value={categoryFilter}
             onChange={handleCategoryChange}
             isMultiple
-            placeholder={t('dashboard.events.filter.allCategories')}
-            searchPlaceholder={t('dashboard.events.filter.searchCategoryPlaceholder')}
+            placeholder={t('dashboard.events.allCategories')}
+            searchPlaceholder={t('dashboard.events.searchCategoryPlaceholder')}
             noOptionsMessage={t('dashboard.events.table.emptyMessage')}
           />
         </div>

@@ -24,8 +24,8 @@ export function ParticipantFilterSection({
   totalCount
 }: ParticipantFilterSectionProps) {
   const statusOptions = [
-    { label: t('dashboard.events.participants.statusLabel.registered', { defaultValue: 'Registered' }), value: 'registered' },
-    { label: t('dashboard.events.participants.statusLabel.attended', { defaultValue: 'Attended' }), value: 'attended' }
+    { label: t('dashboard.participants.statusLabel.registered'), value: 'registered' },
+    { label: t('dashboard.participants.statusLabel.attended'), value: 'attended' }
   ]
 
   const statusFilter = useMemo(() => (columnFilters.find((f) => f.id === 'status')?.value as string[]) || [], [columnFilters])
@@ -46,20 +46,18 @@ export function ParticipantFilterSection({
     <div>
       <div className="mb-4 flex items-center gap-2">
         <Users className="text-primary-dark h-5 w-5" />
-        <h2 className="text-foreground text-lg font-bold">{t('dashboard.events.participants.title', { defaultValue: 'Participants' })}</h2>
+        <h2 className="text-foreground text-lg font-bold">{t('dashboard.participants.title')}</h2>
         <span className="bg-primary/10 text-primary rounded-full px-2.5 py-0.5 text-xs font-semibold">{totalCount}</span>
       </div>
 
-      <p className="text-muted mb-4 text-sm">
-        {t('dashboard.events.participants.subtitle', { defaultValue: 'List of all registered event participants.' })}
-      </p>
+      <p className="text-muted mb-4 text-sm">{t('dashboard.participants.subtitle')}</p>
 
       {/* Filter controls */}
       <div className="flex flex-wrap items-center gap-3">
         <div className="min-w-[300px] flex-1">
           <Input
             icon={<Search size={18} />}
-            placeholder={t('dashboard.events.participants.filter.searchPlaceholder', { defaultValue: 'Search by name, NIK, email...' })}
+            placeholder={t('dashboard.participants.searchPlaceholder')}
             value={globalFilter}
             onChange={(e) => onGlobalFilterChange(e.target.value)}
           />
@@ -72,8 +70,8 @@ export function ParticipantFilterSection({
             value={statusFilter}
             onChange={handleStatusChange}
             isMultiple
-            placeholder={t('dashboard.events.participants.filter.allStatuses', { defaultValue: 'All Statuses' })}
-            searchPlaceholder={t('dashboard.events.participants.filter.searchStatusPlaceholder', { defaultValue: 'Search status...' })}
+            placeholder={t('public.allStatuses')}
+            searchPlaceholder={t('public.searchStatusPlaceholder')}
             noOptionsMessage={t('dashboard.events.table.emptyMessage')}
           />
         </div>

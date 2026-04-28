@@ -38,7 +38,7 @@ export function DataTable<TData>({
 
   return (
     <div className="flex flex-col gap-4">
-      <Card className="shadow-2xl">
+      <Card className="overflow-visible shadow-2xl">
         {headerSlot && <div className="p-6">{headerSlot}</div>}
 
         <div className="overflow-x-auto rounded-b-xl">

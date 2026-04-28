@@ -41,7 +41,7 @@ export function ParticipantsTable({ participants }: ParticipantsTableProps) {
       table={table}
       columns={columns}
       skeletonRows={10}
-      emptyMessage={t('dashboard.events.participants.emptyMessage')}
+      emptyMessage={t('dashboard.participants.emptyMessage')}
       headerSlot={
         <ParticipantFilterSection
           t={t}

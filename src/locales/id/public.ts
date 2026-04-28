@@ -10,5 +10,7 @@ export default {
   copyTooltip: 'Salin Link',
   copySuccess: 'Link berhasil disalin!',
   openTooltip: 'Buka Link',
-  actionText: 'Tindakan'
+  actionText: 'Tindakan',
+  allStatuses: 'Semua Status',
+  searchStatusPlaceholder: 'Cari status...'
 }

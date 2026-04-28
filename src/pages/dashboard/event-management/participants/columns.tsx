@@ -12,11 +12,11 @@ const PARTICIPANT_STATUS_COLORS: Record<string, string> = {
 
 export const getParticipantColumns = (t: TFunction) => [
   columnHelper.accessor('participant_code', {
-    header: () => t('dashboard.events.participants.code'),
+    header: () => t('dashboard.participants.code'),
     cell: (info) => <span className="text-primary font-mono text-xs font-semibold">{info.getValue()}</span>
   }),
   columnHelper.accessor('name', {
-    header: () => t('dashboard.events.participants.name'),
+    header: () => t('dashboard.participants.name'),
     cell: (info) => (
       <LongText align="left" className="text-foreground w-44 font-semibold">
         {info.getValue()}
@@ -24,11 +24,11 @@ export const getParticipantColumns = (t: TFunction) => [
     )
   }),
   columnHelper.accessor('nik', {
-    header: () => t('dashboard.events.participants.nik'),
+    header: () => t('dashboard.participants.nik'),
     cell: (info) => <span className="text-muted font-mono text-xs">{info.getValue()}</span>
   }),
   columnHelper.accessor('email', {
-    header: () => t('dashboard.events.participants.email'),
+    header: () => t('dashboard.participants.email'),
     cell: (info) => (
       <LongText align="left" className="text-muted w-44 text-sm">
         {info.getValue()}
@@ -36,11 +36,11 @@ export const getParticipantColumns = (t: TFunction) => [
     )
   }),
   columnHelper.accessor('whatsapp_number', {
-    header: () => t('dashboard.events.participants.whatsapp'),
+    header: () => t('dashboard.participants.whatsapp'),
     cell: (info) => <span className="text-muted text-sm">{info.getValue()}</span>
   }),
   columnHelper.accessor('created_at', {
-    header: () => t('dashboard.events.participants.registeredAt'),
+    header: () => t('dashboard.participants.registeredAt'),
     cell: (info) => {
       const date = new Date(info.getValue())
       return (
@@ -52,7 +52,7 @@ export const getParticipantColumns = (t: TFunction) => [
     }
   }),
   columnHelper.accessor('status', {
-    header: () => <span className="block text-center">{t('dashboard.events.participants.status')}</span>,
+    header: () => <span className="block text-center">{t('dashboard.participants.status')}</span>,
     filterFn: 'arrIncludesSome',
     cell: (info) => {
       const status = info.getValue()
@@ -63,7 +63,7 @@ export const getParticipantColumns = (t: TFunction) => [
               PARTICIPANT_STATUS_COLORS[status] || 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400'
             }`}
           >
-            {t(`dashboard.events.participants.statusLabel.${status}`, { defaultValue: status })}
+            {t(`dashboard.participants.statusLabel.${status}`, { defaultValue: status })}
           </span>
         </div>
       )

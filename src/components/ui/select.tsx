@@ -118,7 +118,7 @@ export function Select({
   }
 
   return (
-    <div className={cn('relative w-full', className, isOpen ? 'z-1000' : 'z-0')} ref={containerRef}>
+    <div className={cn('relative w-full', className, isOpen ? 'z-500' : 'z-0')} ref={containerRef}>
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}

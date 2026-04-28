@@ -6,6 +6,28 @@ export default {
     of: 'of',
     entries: 'entries'
   },
+  sidebar: {
+    label: 'Main Menu',
+    dashboard: 'Dashboard',
+    events: 'Event Management',
+    reports: 'Council Reports',
+    qr: 'QR & Check-in System',
+    gis: 'WebGIS',
+    kta: 'Digital KTA',
+    wa: 'WhatsApp Blasting',
+    social: 'Social Media',
+    logout: 'Logout'
+  },
+  navbar: {
+    profile: 'Profile',
+    settings: 'Settings'
+  },
+  logoutConfirm: {
+    title: 'Confirm Logout',
+    message: 'Are you sure you want to log out of your account?',
+    cancel: 'Cancel',
+    confirm: 'Log Out'
+  },
   user: {
     response: {
       successCreateMsg: 'User created successfully!',
@@ -32,39 +54,59 @@ export default {
       postalCodeMax: 'Postal code must not exceed 5 characters.'
     }
   },
-  sidebar: {
-    label: 'Main Menu',
-    dashboard: 'Dashboard',
-    events: 'Event Management',
-    reports: 'Council Reports',
-    qr: 'QR & Check-in System',
-    gis: 'WebGIS',
-    kta: 'Digital KTA',
-    wa: 'WhatsApp Blasting',
-    social: 'Social Media',
-    logout: 'Logout'
-  },
-  navbar: {
-    profile: 'Profile',
-    settings: 'Settings'
-  },
-  logoutConfirm: {
-    title: 'Confirm Logout',
-    message: 'Are you sure you want to log out of your account?',
-    cancel: 'Cancel',
-    confirm: 'Log Out'
-  },
   events: {
     title: 'Event Management',
     subtitle: 'Manage Golkar Party events and activities',
     createNew: 'Create New Event',
-    response: {
-      successCreateMsg: 'Event created successfully!',
-      failedCreateMsg: 'Failed to create event.',
-      successUpdateMsg: 'Event updated successfully!',
-      failedUpdateMsg: 'Failed to update event.',
-      successDeleteMsg: 'Event deleted successfully!',
-      failedDeleteMsg: 'Failed to delete event.'
+    searchPlaceholder: 'Search events...',
+    searchCategoryPlaceholder: 'Search category...',
+    allCategories: 'All Categories',
+    status: {
+      draft: 'Draft',
+      published: 'Published',
+      completed: 'Completed',
+      cancelled: 'Cancelled'
+    },
+    summary: {
+      totalEvents: 'Total Events',
+      upcoming: 'Upcoming',
+      totalParticipants: 'Total Participants',
+      avgAttendance: 'Avg. Attendance'
+    },
+    deleteConfirm: {
+      title: 'Delete Event',
+      message: 'Are you sure you want to delete this event? This action cannot be undone.'
+    },
+    table: {
+      title: 'Event List',
+      subtitle: 'Manage and monitor all created events',
+      emptyMessage: 'No events found.',
+      event: 'Event',
+      dateTime: 'Date & Time',
+      location: 'Location',
+      organizer: 'Organizer',
+      participants: 'Participants',
+      status: 'Status',
+      actions: 'Actions'
+    },
+    detail: {
+      title: 'Event Detail',
+      subtitle: 'Detail information and event registration link.',
+      dateLabel: 'Date',
+      timeLabel: 'Time',
+      locationLabel: 'Location',
+      organizerLabel: 'Organizer',
+      descriptionLabel: 'Full Description',
+      registrationLink: {
+        title: 'Registration Link',
+        subtitle: 'Share this link with potential participants.',
+        info: 'Click the button on the right to open the registration form.'
+      },
+      participantStatus: {
+        title: 'Status Participants',
+        registered: 'Registered',
+        capacity: 'Capacity'
+      }
     },
     form: {
       nameLabel: 'Event Name',
@@ -93,25 +135,6 @@ export default {
       createSubtitle: 'Fill in the form below to add a new event.',
       editSubtitle: 'Update existing event information.'
     },
-    detail: {
-      title: 'Event Detail',
-      subtitle: 'Detail information and event registration link.',
-      dateLabel: 'Date',
-      timeLabel: 'Time',
-      locationLabel: 'Location',
-      organizerLabel: 'Organizer',
-      descriptionLabel: 'Full Description',
-      registrationLink: {
-        title: 'Registration Link',
-        subtitle: 'Share this link with potential participants.',
-        info: 'Click the button on the right to open the registration form.'
-      },
-      participantStatus: {
-        title: 'Status Participants',
-        registered: 'Registered',
-        capacity: 'Capacity'
-      }
-    },
     validate: {
       categoryRequired: 'Category is required.',
       nameRequired: 'Event name is required.',
@@ -129,63 +152,30 @@ export default {
       locationMax: 'Location must not exceed 255 characters.',
       statusRequired: 'Status is required.'
     },
-    filter: {
-      searchPlaceholder: 'Search events...',
-      searchStatusPlaceholder: 'Search status...',
-      searchCategoryPlaceholder: 'Search category...',
-      allStatuses: 'All Statuses',
-      allCategories: 'All Categories'
-    },
-    status: {
-      draft: 'Draft',
-      published: 'Published',
-      completed: 'Completed',
-      cancelled: 'Cancelled'
-    },
-    summary: {
-      totalEvents: 'Total Events',
-      upcoming: 'Upcoming',
-      totalParticipants: 'Total Participants',
-      avgAttendance: 'Avg. Attendance'
-    },
-    deleteConfirm: {
-      title: 'Delete Event',
-      message: 'Are you sure you want to delete this event? This action cannot be undone.'
-    },
-    table: {
-      title: 'Event List',
-      subtitle: 'Manage and monitor all created events',
-      emptyMessage: 'No events found.',
-      headers: {
-        event: 'Event',
-        dateTime: 'Date & Time',
-        location: 'Location',
-        organizer: 'Organizer',
-        participants: 'Participants',
-        status: 'Status',
-        actions: 'Actions'
-      }
-    },
-    participants: {
-      title: 'Participant List',
-      subtitle: 'List of all participants registered for this event.',
-      emptyMessage: 'No participants found.',
-      code: 'Code',
-      name: 'Name',
-      nik: 'NIK',
-      email: 'Email',
-      whatsapp: 'WhatsApp',
-      status: 'Status',
-      registeredAt: 'Reg. At',
-      statusLabel: {
-        registered: 'Registered',
-        attended: 'Attended'
-      },
-      filter: {
-        searchPlaceholder: 'Search name, NIK, or email...',
-        allStatuses: 'All Statuses',
-        searchStatusPlaceholder: 'Search status...'
-      }
+    response: {
+      successCreateMsg: 'Event created successfully!',
+      failedCreateMsg: 'Failed to create event.',
+      successUpdateMsg: 'Event updated successfully!',
+      failedUpdateMsg: 'Failed to update event.',
+      successDeleteMsg: 'Event deleted successfully!',
+      failedDeleteMsg: 'Failed to delete event.'
+    }
+  },
+  participants: {
+    title: 'Participant List',
+    subtitle: 'List of all participants registered for this event.',
+    emptyMessage: 'No participants found.',
+    searchPlaceholder: 'Search name, NIK, or email...',
+    code: 'Code',
+    name: 'Name',
+    nik: 'NIK',
+    email: 'Email',
+    whatsapp: 'WhatsApp',
+    status: 'Status',
+    registeredAt: 'Reg. At',
+    statusLabel: {
+      registered: 'Registered',
+      attended: 'Attended'
     }
   }
 }
