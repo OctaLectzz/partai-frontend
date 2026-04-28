@@ -77,17 +77,7 @@ export function ParticipantFilterSection({
         </div>
 
         {/* Reset Button */}
-        {hasActiveFilters && (
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={handleResetFilters}
-            className="text-muted h-10 px-3 transition-colors hover:text-red-500"
-            icon={<RotateCcw size={16} />}
-          >
-            {t('public.resetText')}
-          </Button>
-        )}
+        {hasActiveFilters && <Button variant="danger" size="sm" onClick={handleResetFilters} icon={<RotateCcw size={16} />}></Button>}
       </div>
     </div>
   )

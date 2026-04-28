@@ -3,17 +3,7 @@ import { Avatar } from '@/components/ui/avatar'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useAuth } from '@/contexts/auth-context'
 import { useLogout } from '@/hooks/use-auth'
-import {
-  Calendar,
-  FileEdit,
-  IdCard,
-  LayoutGrid,
-  LogOut,
-  Map,
-  MessageSquare,
-  QrCode,
-  Share2
-} from 'lucide-react'
+import { BarChart3, Calendar, FileText, IdCard, LayoutGrid, LogOut, Map, MessageSquare, QrCode, Share2, UserCheck, Users } from 'lucide-react'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, useLocation } from 'react-router-dom'
@@ -22,6 +12,11 @@ interface MenuItem {
   title: string
   path: string
   icon: typeof LayoutGrid
+}
+
+interface MenuGroup {
+  label: string
+  items: MenuItem[]
 }
 
 interface SidebarProps {
@@ -35,15 +30,40 @@ export default function Sidebar({ isOpen }: SidebarProps) {
   const location = useLocation()
   const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false)
 
-  const menuItems: MenuItem[] = [
-    { title: t('dashboard.sidebar.dashboard'), path: '/dashboard', icon: LayoutGrid },
-    { title: t('dashboard.sidebar.events'), path: '/dashboard/events', icon: Calendar },
-    { title: t('dashboard.sidebar.reports'), path: '/dashboard/reports', icon: FileEdit },
-    { title: t('dashboard.sidebar.qr'), path: '/dashboard/qr-checkin', icon: QrCode },
-    { title: t('dashboard.sidebar.gis'), path: '/dashboard/gis', icon: Map },
-    { title: t('dashboard.sidebar.kta'), path: '/dashboard/kta', icon: IdCard },
-    { title: t('dashboard.sidebar.wa'), path: '/dashboard/wa-blasting', icon: MessageSquare },
-    { title: t('dashboard.sidebar.social'), path: '/dashboard/social-media', icon: Share2 }
+  const groups: MenuGroup[] = [
+    {
+      label: t('dashboard.sidebar.label'),
+      items: [
+        { title: t('dashboard.sidebar.dashboard'), path: '/dashboard', icon: LayoutGrid },
+        { title: t('dashboard.sidebar.events'), path: '/dashboard/events', icon: Calendar },
+        { title: t('dashboard.sidebar.massData'), path: '/dashboard/mass-data', icon: Users },
+        { title: t('dashboard.sidebar.councilMembers'), path: '/dashboard/council-members', icon: UserCheck }
+      ]
+    },
+    {
+      label: t('dashboard.sidebar.operational'),
+      items: [
+        { title: t('dashboard.sidebar.qrCheckin'), path: '/dashboard/qr-checkin', icon: QrCode },
+        {
+          title: t('dashboard.sidebar.councilActivityReports'),
+          path: '/dashboard/council-activity-reports',
+          icon: FileText
+        },
+        { title: t('dashboard.sidebar.kta'), path: '/dashboard/kta', icon: IdCard },
+        { title: t('dashboard.sidebar.whatsAppBlasting'), path: '/dashboard/whatsapp-blasting', icon: MessageSquare }
+      ]
+    },
+    {
+      label: t('dashboard.sidebar.landingPage'),
+      items: [{ title: t('dashboard.sidebar.socialMedia'), path: '/dashboard/social-media', icon: Share2 }]
+    },
+    {
+      label: t('dashboard.sidebar.analytics'),
+      items: [
+        { title: t('dashboard.sidebar.analytics'), path: '/dashboard/analytics', icon: BarChart3 },
+        { title: t('dashboard.sidebar.distributionMap'), path: '/dashboard/distribution-map', icon: Map }
+      ]
+    }
   ]
 
   return (
@@ -53,9 +73,7 @@ export default function Sidebar({ isOpen }: SidebarProps) {
       }`}
     >
       {/* Header / Logo */}
-      <div
-        className={`p-6 transition-all duration-300 ${isOpen ? '' : 'flex justify-center px-4'}`}
-      >
+      <div className={`p-6 transition-all duration-300 ${isOpen ? '' : 'flex justify-center px-4'}`}>
         <div className="flex items-center gap-3 overflow-hidden">
           <div className="border-primary bg-primary/5 flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg border-2">
             <img src="/logo.png" alt="Logo" className="h-12 w-12 object-contain" />
@@ -73,60 +91,56 @@ export default function Sidebar({ isOpen }: SidebarProps) {
         </div>
       </div>
 
-      {/* Menu Label */}
-      <div
-        className={`px-6 py-2 transition-all duration-300 ${isOpen ? '' : 'flex justify-center'}`}
-      >
-        {isOpen ? (
-          <p className="animate-in fade-in text-[11px] font-bold tracking-widest text-gray-400 uppercase duration-300">
-            {t('dashboard.sidebar.label')}
-          </p>
-        ) : (
-          <div className="h-1 w-8 bg-gray-100 dark:bg-gray-800" />
-        )}
-      </div>
-
       {/* Navigation */}
       <nav className="scrollbar-custom flex-1 overflow-y-auto px-4 py-2">
-        <ul className="space-y-1">
-          {menuItems.map((item) => {
-            const isActive = location.pathname === item.path
-            return (
-              <li key={item.path}>
-                <Link
-                  to={item.path}
-                  title={!isOpen ? item.title : ''}
-                  className={`group flex cursor-pointer items-center gap-3 rounded-xl py-3 transition-all duration-200 ${
-                    isOpen ? 'px-4' : 'justify-center px-0'
-                  } ${
-                    isActive
-                      ? 'bg-primary shadow-primary/40 text-gray-900 shadow-lg'
-                      : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-100'
-                  }`}
-                >
-                  <item.icon
-                    size={20}
-                    className={`shrink-0 ${isActive ? 'text-gray-900' : 'text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-100'}`}
-                  />
-                  {isOpen && (
-                    <span className="animate-in fade-in slide-in-from-left-1 truncate text-sm font-semibold duration-300">
-                      {item.title}
-                    </span>
-                  )}
-                </Link>
-              </li>
-            )
-          })}
-        </ul>
+        {groups.map((group, groupIdx) => (
+          <div key={group.label} className={groupIdx > 0 ? 'mt-6' : ''}>
+            {/* Menu Label */}
+            <div className={`px-2 py-2 transition-all duration-300 ${isOpen ? '' : 'flex justify-center'}`}>
+              {isOpen ? (
+                <p className="animate-in fade-in text-[11px] font-bold tracking-widest text-gray-400 uppercase duration-300">{group.label}</p>
+              ) : (
+                <div className="h-1 w-8 bg-gray-100 dark:bg-gray-800" />
+              )}
+            </div>
+
+            <ul className="mt-1 space-y-1">
+              {group.items.map((item) => {
+                const isActive = location.pathname === item.path
+                return (
+                  <li key={item.path}>
+                    <Link
+                      to={item.path}
+                      title={!isOpen ? item.title : ''}
+                      className={`group flex cursor-pointer items-center gap-3 rounded-xl py-3 transition-all duration-200 ${
+                        isOpen ? 'px-4' : 'justify-center px-0'
+                      } ${
+                        isActive
+                          ? 'bg-primary shadow-primary/40 text-gray-900 shadow-lg'
+                          : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-100'
+                      }`}
+                    >
+                      <item.icon
+                        size={20}
+                        className={`shrink-0 ${
+                          isActive ? 'text-gray-900' : 'text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-100'
+                        }`}
+                      />
+                      {isOpen && (
+                        <span className="animate-in fade-in slide-in-from-left-1 truncate text-sm font-semibold duration-300">{item.title}</span>
+                      )}
+                    </Link>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+        ))}
       </nav>
 
       {/* Footer / User Profile */}
-      <div
-        className={`border-t border-gray-100 p-4 transition-all duration-300 dark:border-gray-800 ${isOpen ? '' : 'px-2'}`}
-      >
-        <div
-          className={`flex items-center gap-3 py-3 transition-all ${isOpen ? 'px-2' : 'justify-center'}`}
-        >
+      <div className={`border-t border-gray-100 p-4 transition-all duration-300 dark:border-gray-800 ${isOpen ? '' : 'px-2'}`}>
+        <div className={`flex items-center gap-3 py-3 transition-all ${isOpen ? 'px-2' : 'justify-center'}`}>
           {isLoading ? (
             <Skeleton className="h-10 w-10 shrink-0 rounded-full" />
           ) : (
@@ -142,12 +156,8 @@ export default function Sidebar({ isOpen }: SidebarProps) {
                 </div>
               ) : (
                 <>
-                  <p className="truncate text-sm font-bold text-gray-900 dark:text-gray-100">
-                    {user?.name || 'Guest'}
-                  </p>
-                  <p className="truncate text-xs text-gray-500">
-                    {user?.email || 'guest@example.com'}
-                  </p>
+                  <p className="truncate text-sm font-bold text-gray-900 dark:text-gray-100">{user?.name || 'Guest'}</p>
+                  <p className="truncate text-xs text-gray-500">{user?.email || 'guest@example.com'}</p>
                 </>
               )}
             </div>
@@ -163,20 +173,11 @@ export default function Sidebar({ isOpen }: SidebarProps) {
           }`}
         >
           <LogOut size={18} className="shrink-0" />
-          {isOpen && (
-            <span className="animate-in fade-in slide-in-from-left-1 duration-300">
-              {t('dashboard.sidebar.logout')}
-            </span>
-          )}
+          {isOpen && <span className="animate-in fade-in slide-in-from-left-1 duration-300">{t('dashboard.sidebar.logout')}</span>}
         </button>
       </div>
 
-      <ConfirmLogout
-        isOpen={isLogoutModalOpen}
-        onClose={() => setIsLogoutModalOpen(false)}
-        onConfirm={() => logout()}
-        isPending={isLogoutPending}
-      />
+      <ConfirmLogout isOpen={isLogoutModalOpen} onClose={() => setIsLogoutModalOpen(false)} onConfirm={() => logout()} isPending={isLogoutPending} />
     </aside>
   )
 }
