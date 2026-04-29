@@ -18,6 +18,9 @@ import Login from '@/pages/auth/login'
 import Register from '@/pages/auth/register'
 
 import Index from '@/pages/dashboard'
+import CouncilMembers from '@/pages/dashboard/council-members'
+import CouncilForm from '@/pages/dashboard/council-members/form'
+import CouncilDetail from '@/pages/dashboard/council-members/show'
 import EventManagement from '@/pages/dashboard/event-management'
 import EventForm from '@/pages/dashboard/event-management/form'
 import EventDetail from '@/pages/dashboard/event-management/show'
@@ -85,6 +88,15 @@ export const router = createBrowserRouter([
                   { path: 'create', element: <MassaForm /> },
                   { path: 'edit/:id', element: <MassaForm /> },
                   { path: 'show/:id', element: <MassaDetail /> }
+                ]
+              },
+              {
+                path: 'council-members',
+                children: [
+                  { index: true, element: <CouncilMembers /> },
+                  { path: 'create', element: <CouncilForm /> },
+                  { path: 'edit/:id', element: <CouncilForm /> },
+                  { path: 'show/:id', element: <CouncilDetail /> }
                 ]
               }
             ]

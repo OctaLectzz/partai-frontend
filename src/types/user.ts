@@ -1,3 +1,5 @@
+import type { District, Province, Regency, Village } from './region'
+
 export interface User {
   id: number
   nik: string | null
@@ -20,10 +22,16 @@ export interface User {
   regency_id: string | null
   district_id: string | null
   village_id: string | null
+  province?: Province
+  regency?: Regency
+  district?: District
+  village?: Village
   postal_code: string | null
+  latitude: string | null
+  longitude: string | null
   photo: string | null
   ktp_photo: string | null
-  role: 'admin' | 'board_member' | 'member' | 'sympathizer' | string
+  role: 'superadmin' | 'admin' | 'council' | 'member' | string
   type: 'admin' | 'user' | 'member' | string
   status: boolean
   created_at: string
