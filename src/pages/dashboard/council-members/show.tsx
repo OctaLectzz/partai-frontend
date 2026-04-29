@@ -1,10 +1,12 @@
+import { Avatar } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
+import ImagePreview from '@/components/ui/image-preview'
 import { MapView } from '@/components/ui/map-view'
 import { useCouncil } from '@/hooks/use-council'
 import { formatDate } from '@/utils/format'
-import { ArrowLeft, Briefcase, Edit, Mail, MapPin, Phone, User as UserIcon } from 'lucide-react'
+import { ArrowLeft, Briefcase, Edit, Mail, MapPin, Phone } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
@@ -62,13 +64,7 @@ export default function CouncilDetail() {
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         {/* Profile Card (Left) */}
         <Card className="flex flex-col items-center gap-4 p-8 text-center shadow-md lg:col-span-1">
-          <div className="flex h-32 w-32 items-center justify-center overflow-hidden rounded-full border-4 border-slate-100 bg-slate-50 dark:border-slate-800 dark:bg-slate-900">
-            {council.photo ? (
-              <img src={council.photo} alt={council.name} className="h-full w-full object-cover" />
-            ) : (
-              <UserIcon size={48} className="text-slate-300 dark:text-slate-700" />
-            )}
-          </div>
+          <Avatar name={council.name} photo={council.photo} className="h-32 w-32 border-4 border-slate-100 text-4xl dark:border-slate-800" />
           <div>
             <h2 className="text-foreground text-xl font-bold">{council.name}</h2>
             <p className="text-muted text-sm">{council.nik || '-'}</p>
@@ -98,9 +94,7 @@ export default function CouncilDetail() {
             {council.ktp_photo && (
               <div className="border-card-border border-t pt-6">
                 <h3 className="text-foreground mb-4 text-lg font-bold">{t('dashboard.council.form.ktpPhotoLabel')}</h3>
-                <div className="relative aspect-video w-full overflow-hidden rounded-2xl border-2 border-slate-100 dark:border-slate-800">
-                  <img src={council.ktp_photo} alt="KTP" className="h-full w-full object-cover" />
-                </div>
+                <ImagePreview src={council.ktp_photo} alt="KTP" aspect="16/9" className="w-full border-2 border-slate-100 dark:border-slate-800" />
               </div>
             )}
           </div>

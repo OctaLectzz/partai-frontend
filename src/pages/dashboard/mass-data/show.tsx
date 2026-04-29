@@ -1,10 +1,11 @@
+import { Avatar } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { MapView } from '@/components/ui/map-view'
 import { useMassa } from '@/hooks/use-massa'
 import { formatDate } from '@/utils/format'
-import { ArrowLeft, Briefcase, Edit, Mail, MapPin, Phone, User } from 'lucide-react'
+import { ArrowLeft, Briefcase, Edit, Mail, MapPin, Phone } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
@@ -62,13 +63,7 @@ export default function MassaDetail() {
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         {/* Profile Card (Left) */}
         <Card className="flex flex-col items-center gap-4 p-8 text-center shadow-md lg:col-span-1">
-          <div className="flex h-32 w-32 items-center justify-center overflow-hidden rounded-full border-4 border-slate-100 bg-slate-50 dark:border-slate-800 dark:bg-slate-900">
-            {massa.photo ? (
-              <img src={massa.photo} alt={massa.full_name} className="h-full w-full object-cover" />
-            ) : (
-              <User size={48} className="text-slate-300 dark:text-slate-700" />
-            )}
-          </div>
+          <Avatar name={massa.full_name} photo={massa.photo} className="h-32 w-32 border-4 border-slate-100 text-4xl dark:border-slate-800" />
           <div>
             <h2 className="text-foreground text-xl font-bold">{massa.full_name}</h2>
             <p className="text-muted text-sm">{massa.nik}</p>

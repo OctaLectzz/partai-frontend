@@ -1,5 +1,6 @@
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { LongText } from '@/components/ui/long-text'
 import type { Massa } from '@/types/massa'
 import { createColumnHelper } from '@tanstack/react-table'
 import type { TFunction } from 'i18next'
@@ -17,7 +18,9 @@ export const getColumns = (t: TFunction, onDelete: (id: number, name: string) =>
     header: () => t('dashboard.massa.form.fullNameLabel'),
     cell: (info) => (
       <div className="flex flex-col">
-        <span className="text-foreground font-bold">{info.getValue()}</span>
+        <LongText align="left" className="text-foreground w-48 font-bold">
+          {info.getValue()}
+        </LongText>
         <span className="text-muted text-xs">{info.row.original.profession || '-'}</span>
       </div>
     )
