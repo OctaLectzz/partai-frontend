@@ -1,18 +1,18 @@
 import { CopyableLinkField } from '@/components/copyable-link-field'
+import { Badge, type BadgeVariant } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { useEvent } from '@/hooks/use-event'
-import { cn } from '@/lib/utils'
 import { ArrowLeft, Calendar, Clock, ExternalLink, Info, MapPin, Users } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, useParams } from 'react-router-dom'
 import { ParticipantsTable } from './participants'
 
-const STATUS_COLORS: Record<string, string> = {
-  draft: 'bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300',
-  published: 'bg-blue-500 text-white shadow-sm shadow-blue-500/20',
-  completed: 'bg-emerald-500 text-white shadow-sm shadow-emerald-500/20',
-  cancelled: 'bg-red-500 text-white shadow-sm shadow-red-500/20'
+const STATUS_VARIANTS: Record<string, BadgeVariant> = {
+  draft: 'slate',
+  published: 'info',
+  completed: 'success',
+  cancelled: 'danger'
 }
 
 export default function EventDetail() {
@@ -27,7 +27,14 @@ export default function EventDetail() {
   }
 
   if (!event) {
-    return <div className="p-8 text-center text-red-500">Event tidak ditemukan.</div>
+    return (
+      <div className="p-6 text-center">
+        <p className="text-muted">{t('public.noData')}</p>
+        <Button variant="ghost" className="mt-4" onClick={() => navigate('/dashboard/events')}>
+          {t('public.backToList')}
+        </Button>
+      </div>
+    )
   }
 
   const registrationLink = `${window.location.origin}/register-event.html?slug=${slug}`
@@ -44,17 +51,12 @@ export default function EventDetail() {
             className="text-muted hover:text-foreground border-card-border bg-card h-9 gap-2 rounded-lg border px-3 transition-colors"
             icon={<ArrowLeft size={16} />}
           >
-            {t('dashboard.events.form.backToList')}
+            {t('public.backToList')}
           </Button>
 
-          <span
-            className={cn(
-              'rounded-full px-4 py-1.5 text-sm font-bold shadow-lg',
-              STATUS_COLORS[event.status] || 'bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300'
-            )}
-          >
+          <Badge variant={STATUS_VARIANTS[event.status] || 'slate'} className="px-4 py-1.5 text-sm shadow-lg">
             {t(`dashboard.events.status.${event.status}`)}
-          </span>
+          </Badge>
         </div>
 
         <div>

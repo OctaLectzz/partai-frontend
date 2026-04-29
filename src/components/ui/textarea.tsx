@@ -4,12 +4,19 @@ import { forwardRef, type TextareaHTMLAttributes } from 'react'
 interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   error?: string
   label?: string
+  description?: string
 }
 
-const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({ error, label, className = '', ...props }, ref) => {
+const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({ error, label, description, className = '', ...props }, ref) => {
   return (
     <div className="w-full">
-      {label && <label className="text-foreground mb-1.5 block text-sm font-medium">{label}</label>}
+      {label && (
+        <label className="text-foreground mb-1.5 block text-sm font-medium">
+          {label}
+          {props.required && <span className="ml-1 text-red-500">*</span>}
+        </label>
+      )}
+
       <textarea
         ref={ref}
         className={cn(
@@ -19,7 +26,11 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({ error, label,
           className
         )}
         {...props}
+        value={'value' in props ? (props.value ?? '') : undefined}
       />
+
+      {description && <p className="text-muted mt-1.5 text-[11px] leading-tight italic">{description}</p>}
+
       {error && <p className="mt-1.5 text-xs text-red-400">{error}</p>}
     </div>
   )

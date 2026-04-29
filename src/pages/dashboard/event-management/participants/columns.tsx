@@ -1,3 +1,4 @@
+import { Badge, type BadgeVariant } from '@/components/ui/badge'
 import { LongText } from '@/components/ui/long-text'
 import type { EventParticipant } from '@/types/event'
 import { createColumnHelper } from '@tanstack/react-table'
@@ -5,9 +6,9 @@ import type { TFunction } from 'i18next'
 
 const columnHelper = createColumnHelper<EventParticipant>()
 
-const PARTICIPANT_STATUS_COLORS: Record<string, string> = {
-  registered: 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
-  attended: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400'
+const STATUS_VARIANTS: Record<string, BadgeVariant> = {
+  registered: 'info',
+  attended: 'success'
 }
 
 export const getParticipantColumns = (t: TFunction) => [
@@ -58,13 +59,7 @@ export const getParticipantColumns = (t: TFunction) => [
       const status = info.getValue()
       return (
         <div className="text-center">
-          <span
-            className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold ${
-              PARTICIPANT_STATUS_COLORS[status] || 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400'
-            }`}
-          >
-            {t(`dashboard.participants.statusLabel.${status}`, { defaultValue: status })}
-          </span>
+          <Badge variant={STATUS_VARIANTS[status] || 'slate'}>{t(`dashboard.participants.statusLabel.${status}`, { defaultValue: status })}</Badge>
         </div>
       )
     }

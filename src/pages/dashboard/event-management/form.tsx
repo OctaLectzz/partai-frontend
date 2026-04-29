@@ -92,7 +92,7 @@ export default function EventForm() {
           className="text-muted hover:text-foreground border-card-border bg-card h-9 gap-2 rounded-lg border px-3 transition-colors"
           icon={<ArrowLeft size={16} />}
         >
-          {t('dashboard.events.form.backToList')}
+          {t('public.backToList')}
         </Button>
 
         <div>
@@ -104,7 +104,7 @@ export default function EventForm() {
       </div>
 
       {/* Form Card */}
-      <Card className="shadow-xl">
+      <Card className="overflow-visible shadow-xl">
         <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 gap-8 p-8 lg:grid-cols-3">
           {/* Main Content (Left Column) */}
           <div className="flex flex-col gap-6 lg:col-span-2">
@@ -116,6 +116,7 @@ export default function EventForm() {
                   label={t('dashboard.events.form.nameLabel')}
                   placeholder={t('dashboard.events.form.namePlaceholder')}
                   error={errors.name?.message}
+                  required
                   {...field}
                 />
               )}
@@ -129,6 +130,7 @@ export default function EventForm() {
                   label={t('dashboard.events.form.descriptionLabel')}
                   placeholder={t('dashboard.events.form.descriptionPlaceholder')}
                   error={errors.description?.message}
+                  required
                   {...field}
                 />
               )}
@@ -139,14 +141,14 @@ export default function EventForm() {
                 name="start_date"
                 control={control}
                 render={({ field }) => (
-                  <Input type="date" label={t('dashboard.events.form.startDateLabel')} error={errors.start_date?.message} {...field} />
+                  <Input type="date" label={t('dashboard.events.form.startDateLabel')} error={errors.start_date?.message} required {...field} />
                 )}
               />
               <Controller
                 name="start_time"
                 control={control}
                 render={({ field }) => (
-                  <Input type="time" label={t('dashboard.events.form.startTimeLabel')} error={errors.start_time?.message} {...field} />
+                  <Input type="time" label={t('dashboard.events.form.startTimeLabel')} error={errors.start_time?.message} required {...field} />
                 )}
               />
             </div>
@@ -156,14 +158,14 @@ export default function EventForm() {
                 name="end_date"
                 control={control}
                 render={({ field }) => (
-                  <Input type="date" label={t('dashboard.events.form.endDateLabel')} error={errors.end_date?.message} {...field} />
+                  <Input type="date" label={t('dashboard.events.form.endDateLabel')} error={errors.end_date?.message} required {...field} />
                 )}
               />
               <Controller
                 name="end_time"
                 control={control}
                 render={({ field }) => (
-                  <Input type="time" label={t('dashboard.events.form.endTimeLabel')} error={errors.end_time?.message} {...field} />
+                  <Input type="time" label={t('dashboard.events.form.endTimeLabel')} error={errors.end_time?.message} required {...field} />
                 )}
               />
             </div>
@@ -177,6 +179,7 @@ export default function EventForm() {
                   label={t('dashboard.events.form.locationLabel')}
                   placeholder={t('dashboard.events.form.locationPlaceholder')}
                   error={errors.location?.message}
+                  required
                   {...field}
                 />
               )}
@@ -193,6 +196,7 @@ export default function EventForm() {
                   label={t('dashboard.events.form.organizerLabel')}
                   placeholder={t('dashboard.events.form.organizerPlaceholder')}
                   error={errors.organizer?.message}
+                  required
                   {...field}
                 />
               )}
@@ -207,47 +211,46 @@ export default function EventForm() {
                   label={t('dashboard.events.form.targetParticipantsLabel')}
                   placeholder={t('dashboard.events.form.targetParticipantsPlaceholder')}
                   error={errors.target_participants?.message}
+                  required
                   onChange={(e) => field.onChange(Number(e.target.value))}
                   value={field.value}
                 />
               )}
             />
 
-            <div className="flex flex-col gap-1.5">
-              <label className="text-foreground text-sm font-medium">{t('dashboard.events.form.categoryLabel')}</label>
-              <Controller
-                name="category_id"
-                control={control}
-                render={({ field }) => (
-                  <Select
-                    options={categoryOptions}
-                    value={String(field.value || '')}
-                    onChange={(val) => field.onChange(Number(val))}
-                    placeholder={t('dashboard.events.form.categoryPlaceholder')}
-                    className="w-full"
-                  />
-                )}
-              />
-              {errors.category_id && <p className="text-xs text-red-400">{errors.category_id.message}</p>}
-            </div>
+            <Controller
+              name="category_id"
+              control={control}
+              render={({ field }) => (
+                <Select
+                  options={categoryOptions}
+                  value={String(field.value || '')}
+                  onChange={(val) => field.onChange(Number(val))}
+                  label={t('dashboard.events.form.categoryLabel')}
+                  error={errors.category_id?.message}
+                  placeholder={t('dashboard.events.form.categoryPlaceholder')}
+                  required
+                  className="w-full"
+                />
+              )}
+            />
 
-            <div className="flex flex-col gap-1.5">
-              <label className="text-foreground text-sm font-medium">{t('dashboard.events.form.statusLabel')}</label>
-              <Controller
-                name="status"
-                control={control}
-                render={({ field }) => (
-                  <Select
-                    options={statusOptions}
-                    value={field.value}
-                    onChange={field.onChange}
-                    placeholder={t('dashboard.events.form.statusPlaceholder')}
-                    className="w-full"
-                  />
-                )}
-              />
-              {errors.status && <p className="text-xs text-red-400">{errors.status.message}</p>}
-            </div>
+            <Controller
+              name="status"
+              control={control}
+              render={({ field }) => (
+                <Select
+                  options={statusOptions}
+                  value={field.value}
+                  onChange={field.onChange}
+                  label={t('dashboard.events.form.statusLabel')}
+                  error={errors.status?.message}
+                  placeholder={t('dashboard.events.form.statusPlaceholder')}
+                  required
+                  className="w-full"
+                />
+              )}
+            />
 
             <div className="border-card-border mt-4 border-t pt-6">
               <Button

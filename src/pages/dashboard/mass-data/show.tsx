@@ -1,0 +1,179 @@
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import { MapView } from '@/components/ui/map-view'
+import { useMassa } from '@/hooks/use-massa'
+import { formatDate } from '@/utils/format'
+import { ArrowLeft, Briefcase, Edit, Mail, MapPin, Phone, User } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
+import { Link, useNavigate, useParams } from 'react-router-dom'
+
+export default function MassaDetail() {
+  const { t } = useTranslation()
+  const navigate = useNavigate()
+  const { id } = useParams()
+
+  const { data: massa, isLoading } = useMassa(Number(id) || 0)
+
+  if (isLoading) {
+    return <div className="p-6 text-center">{t('public.loadingText')}</div>
+  }
+
+  if (!massa) {
+    return (
+      <div className="p-6 text-center">
+        <p className="text-muted">{t('public.noData')}</p>
+        <Button variant="ghost" className="mt-4" onClick={() => navigate('/dashboard/mass-data')}>
+          {t('public.backToList')}
+        </Button>
+      </div>
+    )
+  }
+
+  return (
+    <div className="flex flex-col gap-6 p-6">
+      {/* Header */}
+      <div className="flex items-start justify-between">
+        <div className="flex flex-col items-start gap-4">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => navigate('/dashboard/mass-data')}
+            className="text-muted hover:text-foreground border-card-border bg-card h-9 gap-2 rounded-lg border px-3 transition-colors"
+            icon={<ArrowLeft size={16} />}
+          >
+            {t('public.backToList')}
+          </Button>
+
+          <div>
+            <h1 className="text-foreground text-2xl font-bold">{t('dashboard.massa.detail.title')}</h1>
+            <p className="text-muted mt-1 text-sm">{t('dashboard.massa.detail.subtitle')}</p>
+          </div>
+        </div>
+
+        <Link to={`/dashboard/mass-data/edit/${massa.id}`}>
+          <Button className="bg-primary hover:bg-primary-dark shadow-primary/20 gap-2 font-semibold text-slate-900 shadow-lg transition-all hover:-translate-y-0.5">
+            <Edit size={16} />
+            {t('dashboard.massa.detail.editData')}
+          </Button>
+        </Link>
+      </div>
+
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+        {/* Profile Card (Left) */}
+        <Card className="flex flex-col items-center gap-4 p-8 text-center shadow-md lg:col-span-1">
+          <div className="flex h-32 w-32 items-center justify-center overflow-hidden rounded-full border-4 border-slate-100 bg-slate-50 dark:border-slate-800 dark:bg-slate-900">
+            {massa.photo ? (
+              <img src={massa.photo} alt={massa.full_name} className="h-full w-full object-cover" />
+            ) : (
+              <User size={48} className="text-slate-300 dark:text-slate-700" />
+            )}
+          </div>
+          <div>
+            <h2 className="text-foreground text-xl font-bold">{massa.full_name}</h2>
+            <p className="text-muted text-sm">{massa.nik}</p>
+          </div>
+          <Badge variant={massa.status === 'active' ? 'success' : 'slate'}>{t(`public.status.${massa.status}`)}</Badge>
+
+          <div className="border-card-border mt-4 flex w-full flex-col gap-3 border-t pt-4 text-left text-sm">
+            <div className="flex items-center gap-3">
+              <Phone size={16} className="text-muted shrink-0" />
+              <span className="text-foreground font-medium">{massa.phone_number}</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <Mail size={16} className="text-muted shrink-0" />
+              <span className="text-foreground font-medium">{massa.email}</span>
+            </div>
+
+            {massa.profession && (
+              <div className="flex items-center gap-3">
+                <Briefcase size={16} className="text-muted shrink-0" />
+                <span className="text-foreground font-medium">{massa.profession}</span>
+              </div>
+            )}
+
+            <div className="border-card-border border-t pt-6">
+              <h3 className="text-foreground mb-4 text-lg font-bold">{t('dashboard.massa.form.notesLabel')}</h3>
+              <p className="text-foreground rounded-lg bg-yellow-50 p-4 text-sm whitespace-pre-wrap dark:bg-yellow-900/20">{massa.notes ?? '-'}</p>
+            </div>
+          </div>
+        </Card>
+
+        {/* Details Card (Right) */}
+        <Card className="flex flex-col gap-6 p-8 shadow-md lg:col-span-2">
+          <div>
+            <h3 className="text-foreground mb-4 text-lg font-bold">{t('dashboard.massa.detail.personalInfo')}</h3>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div>
+                <p className="text-muted text-xs font-semibold tracking-wider uppercase">
+                  {t('dashboard.massa.form.placeOfBirthLabel')} / {t('dashboard.massa.form.dateOfBirthLabel')}
+                </p>
+                <p className="text-foreground mt-1 font-medium">
+                  {massa.place_of_birth ? `${massa.place_of_birth}, ` : ''}
+                  {formatDate(massa.date_of_birth)}
+                </p>
+              </div>
+
+              <div>
+                <p className="text-muted text-xs font-semibold tracking-wider uppercase">{t('dashboard.massa.form.genderLabel')}</p>
+                <p className="text-foreground mt-1 font-medium">{massa.gender === 'M' ? t('public.gender.male') : t('public.gender.female')}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-card-border border-t pt-6">
+            <h3 className="text-foreground mb-4 text-lg font-bold">{t('dashboard.massa.detail.addressInfo')}</h3>
+            <div className="flex flex-col gap-4">
+              <div>
+                <p className="text-muted text-xs font-semibold tracking-wider uppercase">{t('dashboard.massa.form.addressLabel')}</p>
+                <div className="mt-1 flex items-start gap-2">
+                  <MapPin size={16} className="text-muted mt-0.5 shrink-0" />
+                  <p className="text-foreground leading-relaxed font-medium">
+                    {massa.address}, RT {massa.rt} / RW {massa.rw}, {t('dashboard.massa.form.postalCodeLabel')}: {massa.postal_code}
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4 rounded-lg bg-slate-50 p-4 dark:bg-slate-900/50">
+                <div>
+                  <p className="text-muted text-xs">{t('dashboard.massa.form.provinceLabel')}</p>
+                  <p className="text-foreground font-medium">{massa.province?.name ?? '-'}</p>
+                </div>
+                <div>
+                  <p className="text-muted text-xs">{t('dashboard.massa.form.regencyLabel')}</p>
+                  <p className="text-foreground font-medium">{massa.regency?.name ?? '-'}</p>
+                </div>
+                <div>
+                  <p className="text-muted text-xs">{t('dashboard.massa.form.districtLabel')}</p>
+                  <p className="text-foreground font-medium">{massa.district?.name ?? '-'}</p>
+                </div>
+                <div>
+                  <p className="text-muted text-xs">{t('dashboard.massa.form.villageLabel')}</p>
+                  <p className="text-foreground font-medium">{massa.village?.name ?? '-'}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-card-border border-t pt-6">
+            <h3 className="text-foreground mb-4 text-lg font-bold">{t('dashboard.massa.detail.geographicInfo')}</h3>
+            <div className="relative overflow-hidden rounded-2xl border-2 border-slate-100 dark:border-slate-800">
+              <MapView lat={massa.latitude} lng={massa.longitude} className="h-80 w-full" />
+
+              <div className="absolute right-4 bottom-4 z-10 flex gap-4 rounded-lg bg-white/80 p-3 font-mono text-xs backdrop-blur-sm dark:bg-slate-900/80">
+                <div className="flex flex-col">
+                  <span className="text-muted text-[10px] font-bold uppercase">{t('dashboard.massa.form.latitudeLabel')}</span>
+                  <span className="text-foreground font-bold">{massa.latitude}</span>
+                </div>
+                <div className="flex flex-col border-l border-slate-200 pl-4 dark:border-slate-700">
+                  <span className="text-muted text-[10px] font-bold uppercase">{t('dashboard.massa.form.longitudeLabel')}</span>
+                  <span className="text-foreground font-bold">{massa.longitude}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Card>
+      </div>
+    </div>
+  )
+}

@@ -42,22 +42,14 @@ export default function Login() {
           {/* Logo */}
           <div className="mb-6 flex justify-center">
             <div className="border-primary shadow-primary/20 flex h-24 w-24 items-center justify-center overflow-hidden rounded-full border-4 shadow-lg">
-              <img
-                src="/logo.png"
-                alt={t('public.brandName')}
-                className="h-22 w-22 object-contain"
-              />
+              <img src="/logo.png" alt={t('public.brandName')} className="h-22 w-22 object-contain" />
             </div>
           </div>
 
           {/* Title */}
           <div className="mb-8 text-center">
-            <h1 className="text-2xl font-bold tracking-wide text-white">
-              {t('public.brandName').toUpperCase()}
-            </h1>
-            <h2 className="text-2xl font-bold tracking-wide text-white">
-              {t('auth.login.title').toUpperCase()}
-            </h2>
+            <h1 className="text-2xl font-bold tracking-wide text-white">{t('public.brandName').toUpperCase()}</h1>
+            <h2 className="text-2xl font-bold tracking-wide text-white">{t('auth.login.title').toUpperCase()}</h2>
             <p className="mt-2 text-sm text-gray-400">{t('auth.login.subtitle')}</p>
           </div>
 
@@ -84,13 +76,7 @@ export default function Login() {
             />
 
             <div className="pt-2">
-              <Button
-                type="submit"
-                variant="primary"
-                size="lg"
-                isLoading={isPending}
-                className="w-full"
-              >
+              <Button type="submit" variant="primary" size="lg" isLoading={isPending} className="w-full">
                 {t('auth.login.submitButton')}
               </Button>
             </div>
@@ -98,10 +84,7 @@ export default function Login() {
 
           {/* Footer */}
           <div className="mt-5 text-center">
-            <Link
-              to="/auth/register"
-              className="hover:text-primary text-sm text-gray-400 transition-colors"
-            >
+            <Link to="/auth/register" className="hover:text-primary text-sm text-gray-400 transition-colors">
               {t('auth.login.registerLink')}
             </Link>
           </div>

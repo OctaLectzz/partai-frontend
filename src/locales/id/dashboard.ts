@@ -62,7 +62,7 @@ export default {
   events: {
     title: 'Manajemen Event',
     subtitle: 'Kelola event dan kegiatan Partai Golkar',
-    createNew: 'Buat Event Baru',
+    createNew: 'Tambah Event',
     searchPlaceholder: 'Cari event...',
     searchCategoryPlaceholder: 'Cari kategori...',
     allCategories: 'Semua Kategori',
@@ -114,6 +114,10 @@ export default {
       }
     },
     form: {
+      createTitle: 'Tambah Event',
+      createSubtitle: 'Isi formulir di bawah ini untuk menambahkan event baru.',
+      editTitle: 'Edit Event',
+      editSubtitle: 'Perbarui informasi event yang sudah ada.',
       nameLabel: 'Nama Event',
       namePlaceholder: 'Contoh: Rapat Koordinasi Wilayah',
       descriptionLabel: 'Deskripsi Event',
@@ -133,12 +137,7 @@ export default {
       statusLabel: 'Status Awal',
       statusPlaceholder: 'Pilih Status',
       submitCreate: 'Simpan Event',
-      submitUpdate: 'Perbarui Event',
-      backToList: 'Kembali ke Daftar Event',
-      editTitle: 'Edit Event',
-      createTitle: 'Buat Event Baru',
-      createSubtitle: 'Isi formulir di bawah ini untuk menambahkan event baru.',
-      editSubtitle: 'Perbarui informasi event yang sudah ada.'
+      submitUpdate: 'Perbarui Event'
     },
     validate: {
       categoryRequired: 'Kategori wajib diisi.',
@@ -181,6 +180,104 @@ export default {
     statusLabel: {
       registered: 'Terdaftar',
       attended: 'Hadir'
+    }
+  },
+  massa: {
+    title: 'Data Massa',
+    subtitle: 'Kelola data massa dan pendukung partai',
+    createNew: 'Tambah Data Massa',
+    emptyMessage: 'Tidak ada data massa ditemukan.',
+    actions: 'Aksi',
+    searchPlaceholder: 'Cari NIK atau Nama...',
+    deleteConfirm: {
+      title: 'Hapus Data Massa',
+      message: 'Apakah Anda yakin ingin menghapus data ini? Tindakan ini tidak dapat dibatalkan.'
+    },
+    form: {
+      createTitle: 'Tambah Data Massa',
+      createSubtitle: 'Isi formulir di bawah ini untuk menambahkan data massa baru.',
+      editTitle: 'Edit Data Massa',
+      editSubtitle: 'Perbarui informasi data massa yang sudah ada.',
+      identitySection: 'Data Identitas',
+      addressSection: 'Alamat Lengkap',
+      contactSection: 'Kontak & Status',
+      nikLabel: 'NIK',
+      fullNameLabel: 'Nama Lengkap',
+      genderLabel: 'Jenis Kelamin',
+      genderMale: 'Laki-laki',
+      genderFemale: 'Perempuan',
+      placeOfBirthLabel: 'Tempat Lahir',
+      dateOfBirthLabel: 'Tanggal Lahir',
+      phoneNumberLabel: 'Nomor Telepon',
+      emailLabel: 'Email',
+      addressLabel: 'Alamat',
+      rtLabel: 'RT',
+      rwLabel: 'RW',
+      provinceLabel: 'Provinsi',
+      regencyLabel: 'Kabupaten/Kota',
+      districtLabel: 'Kecamatan',
+      villageLabel: 'Kelurahan/Desa',
+      postalCodeLabel: 'Kode Pos',
+      latitudeLabel: 'Latitude',
+      longitudeLabel: 'Longitude',
+      professionLabel: 'Pekerjaan',
+      photoLabel: 'Foto',
+      notesLabel: 'Catatan',
+      statusLabel: 'Status',
+      submitUpdate: 'Simpan Perubahan',
+      nikPlaceholder: 'Contoh: 3201234567890123',
+      nikDescription: 'Masukkan 16 digit NIK sesuai KTP.',
+      fullNamePlaceholder: 'Contoh: Budi Santoso',
+      fullNameDescription: 'Nama sesuai KTP',
+      genderPlaceholder: 'Pilih Jenis Kelamin',
+      placeOfBirthPlaceholder: 'Contoh: Jakarta',
+      phoneNumberPlaceholder: 'Contoh: 08123456789',
+      phoneNumberDescription: 'Gunakan nomor WhatsApp aktif.',
+      emailPlaceholder: 'Contoh: budi@gmail.com',
+      addressPlaceholder: 'Jln. Merdeka No. 123...',
+      addressDescription: 'Sertakan nama jalan dan nomor rumah.',
+      rtPlaceholder: '001',
+      rwPlaceholder: '002',
+      postalCodePlaceholder: '12345',
+      professionPlaceholder: 'Contoh: Karyawan Swasta',
+      photoDescription: 'Format: JPG, PNG. Maksimal 2MB.',
+      notesPlaceholder: 'Tambahkan catatan jika diperlukan...',
+      statusPlaceholder: 'Pilih Status',
+      formFooter: 'Pastikan semua data yang dimasukkan sudah benar dan sesuai dengan dokumen identitas resmi.'
+    },
+    validate: {
+      nikRequired: 'NIK wajib diisi.',
+      nikLength: 'NIK harus berjumlah 16 karakter.',
+      fullNameRequired: 'Nama lengkap wajib diisi.',
+      fullNameMax: 'Nama lengkap tidak boleh lebih dari 255 karakter.',
+      genderRequired: 'Jenis kelamin wajib dipilih.',
+      dateOfBirthRequired: 'Tanggal lahir wajib diisi.',
+      phoneNumberRequired: 'Nomor telepon wajib diisi.',
+      emailFormat: 'Format email tidak valid.',
+      addressRequired: 'Alamat wajib diisi.',
+      rtRequired: 'RT wajib diisi.',
+      rwRequired: 'RW wajib diisi.',
+      provinceRequired: 'Provinsi wajib dipilih.',
+      regencyRequired: 'Kabupaten/Kota wajib dipilih.',
+      districtRequired: 'Kecamatan wajib dipilih.',
+      villageRequired: 'Kelurahan/Desa wajib dipilih.',
+      postalCodeRequired: 'Kode pos wajib diisi.'
+    },
+    response: {
+      successCreateMsg: 'Data massa berhasil ditambahkan!',
+      failedCreateMsg: 'Gagal menambahkan data massa.',
+      successUpdateMsg: 'Data massa berhasil diperbarui!',
+      failedUpdateMsg: 'Gagal memperbarui data massa.',
+      successDeleteMsg: 'Data massa berhasil dihapus!',
+      failedDeleteMsg: 'Gagal menghapus data massa.'
+    },
+    detail: {
+      title: 'Detail Data Massa',
+      subtitle: 'Informasi lengkap profil dan kontak massa.',
+      personalInfo: 'Informasi Pribadi',
+      addressInfo: 'Informasi Alamat',
+      geographicInfo: 'Lokasi Geografis',
+      editData: 'Edit Data'
     }
   }
 }

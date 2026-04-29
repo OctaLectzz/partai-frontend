@@ -1,3 +1,4 @@
+import { Badge, type BadgeVariant } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { LongText } from '@/components/ui/long-text'
 import type { Event } from '@/types/event'
@@ -8,11 +9,11 @@ import { Link } from 'react-router-dom'
 
 const columnHelper = createColumnHelper<Event>()
 
-const STATUS_COLORS: Record<string, string> = {
-  draft: 'bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300',
-  published: 'bg-blue-500 text-white shadow-sm shadow-blue-500/20',
-  completed: 'bg-emerald-500 text-white shadow-sm shadow-emerald-500/20',
-  cancelled: 'bg-red-500 text-white shadow-sm shadow-red-500/20'
+const STATUS_VARIANTS: Record<string, BadgeVariant> = {
+  draft: 'slate',
+  published: 'info',
+  completed: 'success',
+  cancelled: 'danger'
 }
 
 export const getColumns = (t: TFunction, onDelete: (slug: string, name: string) => void) => [
@@ -87,11 +88,7 @@ export const getColumns = (t: TFunction, onDelete: (slug: string, name: string) 
       const status = info.getValue()
       return (
         <div className="text-center">
-          <span
-            className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold ${STATUS_COLORS[status] || 'bg-slate-200 text-slate-600 dark:bg-slate-800 dark:text-slate-400'}`}
-          >
-            {t(`dashboard.events.status.${status}`)}
-          </span>
+          <Badge variant={STATUS_VARIANTS[status] || 'slate'}>{t(`dashboard.events.status.${status}`)}</Badge>
         </div>
       )
     }

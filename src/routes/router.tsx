@@ -21,6 +21,9 @@ import Index from '@/pages/dashboard'
 import EventManagement from '@/pages/dashboard/event-management'
 import EventForm from '@/pages/dashboard/event-management/form'
 import EventDetail from '@/pages/dashboard/event-management/show'
+import MassData from '@/pages/dashboard/mass-data'
+import MassaForm from '@/pages/dashboard/mass-data/form'
+import MassaDetail from '@/pages/dashboard/mass-data/show'
 
 export const router = createBrowserRouter([
   {
@@ -73,6 +76,15 @@ export const router = createBrowserRouter([
                   { path: 'create', element: <EventForm /> },
                   { path: 'edit/:slug', element: <EventForm /> },
                   { path: 'show/:slug', element: <EventDetail /> }
+                ]
+              },
+              {
+                path: 'mass-data',
+                children: [
+                  { index: true, element: <MassData /> },
+                  { path: 'create', element: <MassaForm /> },
+                  { path: 'edit/:id', element: <MassaForm /> },
+                  { path: 'show/:id', element: <MassaDetail /> }
                 ]
               }
             ]
