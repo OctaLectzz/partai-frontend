@@ -10,7 +10,7 @@ interface CardProps {
 
 export function Card({ children, className, withTopBar = true, topBarColor = 'bg-primary' }: CardProps) {
   return (
-    <div className={cn('bg-card border-card-border relative border shadow-md', className)}>
+    <div className={cn('bg-card border-card-border relative rounded-b-2xl border shadow-md', className)}>
       {withTopBar && <div className={cn('absolute top-0 left-0 h-1.5 w-full rounded-t-2xl', topBarColor)} />}
       {children}
     </div>

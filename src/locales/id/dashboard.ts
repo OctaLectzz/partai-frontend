@@ -458,5 +458,46 @@ export default {
         term4: 'Jika menemukan kartu ini, harap hubungi sekretariat terdekat.'
       }
     }
+  },
+  distributionMap: {
+    title: 'Peta Sebaran',
+    subtitle: 'Visualisasi sebaran data massa di berbagai wilayah',
+    summary: {
+      totalMassa: 'Total Massa',
+      visibleOnMap: 'Terlihat di Peta',
+      provincesCovered: 'Provinsi Tercakup',
+      totalEvents: 'Total Event'
+    },
+    filter: {
+      title: 'Filter Data',
+      allProvinces: 'Semua Provinsi',
+      allRegencies: 'Semua Kabupaten/Kota',
+      provincePlaceholder: 'Pilih Provinsi',
+      regencyPlaceholder: 'Pilih Kabupaten/Kota'
+    },
+    popup: {
+      coordinates: 'Koordinat'
+    },
+    distribution: {
+      title: 'Sebaran Wilayah',
+      subtitle: 'Distribusi data massa per provinsi dan persentasenya',
+      province: 'Provinsi',
+      total: 'Jumlah',
+      chart: 'Distribusi',
+      totalAll: 'Total Keseluruhan'
+    },
+    guide: {
+      title: 'Panduan Peta',
+      subtitle: 'Cara menggunakan peta sebaran',
+      zoomTitle: 'Perbesar/Perkecil',
+      zoomDescription:
+        'Gunakan scroll mouse atau tombol +/- untuk memperbesar dan melihat titik data individu atau memperkecil untuk melihat kluster.',
+      clickTitle: 'Klik Marker',
+      clickDescription: 'Klik marker individu untuk melihat informasi detail data massa termasuk alamat dan kontak.',
+      clusterTitle: 'Perilaku Kluster',
+      clusterDescription: 'Marker dikelompokkan menjadi kluster. Angka menunjukkan total massa di area tersebut. Klik untuk memperbesar kluster.',
+      filterTitle: 'Filter Wilayah',
+      filterDescription: 'Gunakan filter provinsi dan kabupaten di atas peta untuk fokus pada wilayah tertentu yang diminati.'
+    }
   }
 }

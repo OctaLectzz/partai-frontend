@@ -456,5 +456,45 @@ export default {
         term4: 'If found, please return to the nearest secretariat office.'
       }
     }
+  },
+  distributionMap: {
+    title: 'Distribution Map',
+    subtitle: 'Visualization of mass data distribution across regions',
+    summary: {
+      totalMassa: 'Total Massa',
+      visibleOnMap: 'Visible on Map',
+      provincesCovered: 'Provinces Covered',
+      totalEvents: 'Total Events'
+    },
+    filter: {
+      title: 'Filter Data',
+      allProvinces: 'All Provinces',
+      allRegencies: 'All Regencies',
+      provincePlaceholder: 'Select Province',
+      regencyPlaceholder: 'Select Regency'
+    },
+    popup: {
+      coordinates: 'Coordinates'
+    },
+    distribution: {
+      title: 'Regional Distribution',
+      subtitle: 'Mass data distribution by province and percentage',
+      province: 'Province',
+      total: 'Total',
+      chart: 'Distribution',
+      totalAll: 'Grand Total'
+    },
+    guide: {
+      title: 'Map Guide',
+      subtitle: 'How to use the distribution map',
+      zoomTitle: 'Zoom In/Out',
+      zoomDescription: 'Use scroll wheel or +/- buttons to zoom in and see individual data points or zoom out to see clusters.',
+      clickTitle: 'Click Marker',
+      clickDescription: 'Click any individual marker to see detailed mass data information including address and contact.',
+      clusterTitle: 'Cluster Behavior',
+      clusterDescription: 'Markers are grouped into clusters. The number shows total massa in that area. Click to zoom into the cluster.',
+      filterTitle: 'Region Filter',
+      filterDescription: 'Use province and regency filters above the map to focus on specific regions of interest.'
+    }
   }
 }

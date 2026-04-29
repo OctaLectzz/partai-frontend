@@ -21,6 +21,7 @@ import Index from '@/pages/dashboard'
 import CouncilMembers from '@/pages/dashboard/council-members'
 import CouncilForm from '@/pages/dashboard/council-members/form'
 import CouncilDetail from '@/pages/dashboard/council-members/show'
+import DistributionMap from '@/pages/dashboard/distribution-map'
 import EventManagement from '@/pages/dashboard/event-management'
 import EventForm from '@/pages/dashboard/event-management/form'
 import EventDetail from '@/pages/dashboard/event-management/show'
@@ -107,6 +108,10 @@ export const router = createBrowserRouter([
                   { index: true, element: <DigitalMembershipCard /> },
                   { path: 'show/:id', element: <KtaShow /> }
                 ]
+              },
+              {
+                path: 'distribution-map',
+                element: <DistributionMap />
               }
             ]
           }

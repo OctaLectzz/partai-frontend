@@ -16,6 +16,7 @@ export default {
   allStatuses: 'All Statuses',
   searchStatusPlaceholder: 'Search status...',
   backToList: 'Back to List',
+  viewDetail: 'View Detail',
   noData: 'Data not found.',
   preview: 'Preview',
   frontView: 'Front View',

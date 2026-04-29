@@ -16,6 +16,7 @@ export default {
   allStatuses: 'Semua Status',
   searchStatusPlaceholder: 'Cari status...',
   backToList: 'Kembali ke Daftar',
+  viewDetail: 'Lihat Detail',
   noData: 'Data tidak ditemukan.',
   preview: 'Pratinjau',
   frontView: 'Tampilan Depan',
