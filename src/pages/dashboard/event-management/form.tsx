@@ -104,7 +104,7 @@ export default function EventForm() {
       </div>
 
       {/* Form Card */}
-      <Card className="overflow-visible shadow-xl">
+      <Card className="shadow-xl">
         <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 gap-8 p-8 lg:grid-cols-3">
           {/* Main Content (Left Column) */}
           <div className="flex flex-col gap-6 lg:col-span-2">

@@ -40,7 +40,7 @@ export function objectToFormData(obj: Record<string, FormValue>, form: FormData 
 
     // Primitive
     if (typeof value === 'boolean') {
-      form.append(formKey, value ? 'true' : 'false')
+      form.append(formKey, value ? '1' : '0')
     } else {
       form.append(formKey, String(value))
     }

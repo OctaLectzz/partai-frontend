@@ -20,7 +20,7 @@ export const IdentityForm = ({ control, errors }: IdentityFormProps) => {
   ]
 
   return (
-    <Card className="flex flex-col gap-6 overflow-visible p-8 shadow-xl">
+    <Card className="flex flex-col gap-6 p-8 shadow-xl">
       <div className="border-primary border-b pb-4">
         <h3 className="text-foreground text-lg font-bold">{t('dashboard.massa.form.identitySection')}</h3>
       </div>
@@ -90,9 +90,9 @@ export const IdentityForm = ({ control, errors }: IdentityFormProps) => {
                 options={genderOptions}
                 value={field.value}
                 onChange={field.onChange}
-                label={t('dashboard.massa.form.genderLabel')}
+                label={t('public.gender.label')}
                 error={errors.gender?.message}
-                placeholder={t('dashboard.massa.form.genderPlaceholder')}
+                placeholder={t('public.gender.label')}
                 required
                 className="w-full"
               />

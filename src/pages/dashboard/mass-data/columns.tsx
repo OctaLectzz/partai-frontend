@@ -30,7 +30,7 @@ export const getColumns = (t: TFunction, onDelete: (id: number, name: string) =>
     cell: (info) => <span>{info.getValue()}</span>
   }),
   columnHelper.accessor('address', {
-    header: () => t('dashboard.massa.form.addressLabel'),
+    header: () => t('public.address.label'),
     cell: (info) => (
       <div className="flex flex-col">
         <span className="w-48 truncate text-sm">{info.getValue()}</span>
@@ -41,7 +41,7 @@ export const getColumns = (t: TFunction, onDelete: (id: number, name: string) =>
     )
   }),
   columnHelper.accessor('gender', {
-    header: () => <span className="block text-center">{t('dashboard.massa.form.genderLabel')}</span>,
+    header: () => <span className="block text-center">{t('public.gender.label')}</span>,
     filterFn: 'arrIncludesSome',
     cell: (info) => (
       <div className="text-center">
@@ -50,7 +50,7 @@ export const getColumns = (t: TFunction, onDelete: (id: number, name: string) =>
     )
   }),
   columnHelper.accessor('status', {
-    header: () => <span className="block text-center">{t('dashboard.massa.form.statusLabel')}</span>,
+    header: () => <span className="block text-center">{t('public.status.label')}</span>,
     filterFn: 'arrIncludesSome',
     cell: (info) => {
       const status = info.getValue()

@@ -116,7 +116,7 @@ export default function CouncilDetail() {
               </div>
 
               <div>
-                <p className="text-muted text-xs font-semibold tracking-wider uppercase">{t('dashboard.council.form.genderLabel')}</p>
+                <p className="text-muted text-xs font-semibold tracking-wider uppercase">{t('public.gender.label')}</p>
                 <p className="text-foreground mt-1 font-medium">
                   {council.gender === 'M' ? t('public.gender.male') : council.gender === 'F' ? t('public.gender.female') : '-'}
                 </p>
@@ -149,11 +149,11 @@ export default function CouncilDetail() {
             <h3 className="text-foreground mb-4 text-lg font-bold">{t('dashboard.council.detail.addressInfo')}</h3>
             <div className="flex flex-col gap-4">
               <div>
-                <p className="text-muted text-xs font-semibold tracking-wider uppercase">{t('dashboard.council.form.addressLabel')}</p>
+                <p className="text-muted text-xs font-semibold tracking-wider uppercase">{t('public.address.label')}</p>
                 <div className="mt-1 flex items-start gap-2">
                   <MapPin size={16} className="text-muted mt-0.5 shrink-0" />
                   <p className="text-foreground leading-relaxed font-medium">
-                    {council.address || '-'}, RT {council.rt || '-'} / RW {council.rw || '-'}, {t('dashboard.council.form.postalCodeLabel')}:{' '}
+                    {council.address || '-'}, RT {council.rt || '-'} / RW {council.rw || '-'}, {t('public.address.postalCode')}:{' '}
                     {council.postal_code || '-'}
                   </p>
                 </div>
@@ -161,19 +161,19 @@ export default function CouncilDetail() {
 
               <div className="grid grid-cols-2 gap-4 rounded-lg bg-slate-50 p-4 dark:bg-slate-900/50">
                 <div>
-                  <p className="text-muted text-xs">{t('dashboard.council.form.provinceLabel')}</p>
+                  <p className="text-muted text-xs">{t('public.address.province')}</p>
                   <p className="text-foreground font-medium">{council.province?.name ?? '-'}</p>
                 </div>
                 <div>
-                  <p className="text-muted text-xs">{t('dashboard.council.form.regencyLabel')}</p>
+                  <p className="text-muted text-xs">{t('public.address.regency')}</p>
                   <p className="text-foreground font-medium">{council.regency?.name ?? '-'}</p>
                 </div>
                 <div>
-                  <p className="text-muted text-xs">{t('dashboard.council.form.districtLabel')}</p>
+                  <p className="text-muted text-xs">{t('public.address.district')}</p>
                   <p className="text-foreground font-medium">{council.district?.name ?? '-'}</p>
                 </div>
                 <div>
-                  <p className="text-muted text-xs">{t('dashboard.council.form.villageLabel')}</p>
+                  <p className="text-muted text-xs">{t('public.address.village')}</p>
                   <p className="text-foreground font-medium">{council.village?.name ?? '-'}</p>
                 </div>
               </div>
@@ -187,11 +187,11 @@ export default function CouncilDetail() {
 
               <div className="absolute right-4 bottom-4 z-10 flex gap-4 rounded-lg bg-white/80 p-3 font-mono text-xs backdrop-blur-sm dark:bg-slate-900/80">
                 <div className="flex flex-col">
-                  <span className="text-muted text-[10px] font-bold uppercase">{t('dashboard.massa.form.latitudeLabel')}</span>
+                  <span className="text-muted text-[10px] font-bold uppercase">{t('public.address.latitude')}</span>
                   <span className="text-foreground font-bold">{council.latitude || '-'}</span>
                 </div>
                 <div className="flex flex-col border-l border-slate-200 pl-4 dark:border-slate-700">
-                  <span className="text-muted text-[10px] font-bold uppercase">{t('dashboard.massa.form.longitudeLabel')}</span>
+                  <span className="text-muted text-[10px] font-bold uppercase">{t('public.address.longitude')}</span>
                   <span className="text-foreground font-bold">{council.longitude || '-'}</span>
                 </div>
               </div>

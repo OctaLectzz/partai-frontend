@@ -21,8 +21,8 @@ export const ContactForm = ({ control, errors, isCreating, isUpdating, isEdit }:
   const { t } = useTranslation()
 
   const statusOptions = [
-    { label: 'Active', value: 'active' },
-    { label: 'Inactive', value: 'inactive' }
+    { label: t('public.status.active'), value: 'active' },
+    { label: t('public.status.inactive'), value: 'inactive' }
   ]
 
   return (
@@ -37,8 +37,8 @@ export const ContactForm = ({ control, errors, isCreating, isUpdating, isEdit }:
           control={control}
           render={({ field: { value, onChange } }) => (
             <ImageUpload
-              label={t('dashboard.massa.form.photoLabel')}
-              description={t('dashboard.massa.form.photoDescription')}
+              label={t('public.image.photoLabel')}
+              description={t('public.image.description')}
               error={errors.photo?.message}
               value={value as string | File | null}
               onChange={onChange}
@@ -85,9 +85,9 @@ export const ContactForm = ({ control, errors, isCreating, isUpdating, isEdit }:
               options={statusOptions}
               value={field.value}
               onChange={field.onChange}
-              label={t('dashboard.massa.form.statusLabel')}
+              label={t('public.status.label')}
               error={errors.status?.message}
-              placeholder={t('dashboard.massa.form.statusPlaceholder')}
+              placeholder={t('public.allStatuses')}
               className="w-full"
             />
           )}

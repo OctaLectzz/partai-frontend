@@ -110,7 +110,7 @@ export default function MassaDetail() {
               </div>
 
               <div>
-                <p className="text-muted text-xs font-semibold tracking-wider uppercase">{t('dashboard.massa.form.genderLabel')}</p>
+                <p className="text-muted text-xs font-semibold tracking-wider uppercase">{t('public.gender.label')}</p>
                 <p className="text-foreground mt-1 font-medium">{massa.gender === 'M' ? t('public.gender.male') : t('public.gender.female')}</p>
               </div>
             </div>
@@ -120,30 +120,30 @@ export default function MassaDetail() {
             <h3 className="text-foreground mb-4 text-lg font-bold">{t('dashboard.massa.detail.addressInfo')}</h3>
             <div className="flex flex-col gap-4">
               <div>
-                <p className="text-muted text-xs font-semibold tracking-wider uppercase">{t('dashboard.massa.form.addressLabel')}</p>
+                <p className="text-muted text-xs font-semibold tracking-wider uppercase">{t('public.address.label')}</p>
                 <div className="mt-1 flex items-start gap-2">
                   <MapPin size={16} className="text-muted mt-0.5 shrink-0" />
                   <p className="text-foreground leading-relaxed font-medium">
-                    {massa.address}, RT {massa.rt} / RW {massa.rw}, {t('dashboard.massa.form.postalCodeLabel')}: {massa.postal_code}
+                    {massa.address}, RT {massa.rt} / RW {massa.rw}, {t('public.address.postalCode')}: {massa.postal_code}
                   </p>
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4 rounded-lg bg-slate-50 p-4 dark:bg-slate-900/50">
                 <div>
-                  <p className="text-muted text-xs">{t('dashboard.massa.form.provinceLabel')}</p>
+                  <p className="text-muted text-xs">{t('public.address.province')}</p>
                   <p className="text-foreground font-medium">{massa.province?.name ?? '-'}</p>
                 </div>
                 <div>
-                  <p className="text-muted text-xs">{t('dashboard.massa.form.regencyLabel')}</p>
+                  <p className="text-muted text-xs">{t('public.address.regency')}</p>
                   <p className="text-foreground font-medium">{massa.regency?.name ?? '-'}</p>
                 </div>
                 <div>
-                  <p className="text-muted text-xs">{t('dashboard.massa.form.districtLabel')}</p>
+                  <p className="text-muted text-xs">{t('public.address.district')}</p>
                   <p className="text-foreground font-medium">{massa.district?.name ?? '-'}</p>
                 </div>
                 <div>
-                  <p className="text-muted text-xs">{t('dashboard.massa.form.villageLabel')}</p>
+                  <p className="text-muted text-xs">{t('public.address.village')}</p>
                   <p className="text-foreground font-medium">{massa.village?.name ?? '-'}</p>
                 </div>
               </div>
@@ -157,11 +157,11 @@ export default function MassaDetail() {
 
               <div className="absolute right-4 bottom-4 z-10 flex gap-4 rounded-lg bg-white/80 p-3 font-mono text-xs backdrop-blur-sm dark:bg-slate-900/80">
                 <div className="flex flex-col">
-                  <span className="text-muted text-[10px] font-bold uppercase">{t('dashboard.massa.form.latitudeLabel')}</span>
+                  <span className="text-muted text-[10px] font-bold uppercase">{t('public.address.latitude')}</span>
                   <span className="text-foreground font-bold">{massa.latitude}</span>
                 </div>
                 <div className="flex flex-col border-l border-slate-200 pl-4 dark:border-slate-700">
-                  <span className="text-muted text-[10px] font-bold uppercase">{t('dashboard.massa.form.longitudeLabel')}</span>
+                  <span className="text-muted text-[10px] font-bold uppercase">{t('public.address.longitude')}</span>
                   <span className="text-foreground font-bold">{massa.longitude}</span>
                 </div>
               </div>

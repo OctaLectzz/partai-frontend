@@ -2,6 +2,7 @@ import { LongText } from '@/components/ui/long-text'
 import { cn } from '@/lib/utils'
 import { Check, ChevronDown, Search, X } from 'lucide-react'
 import { useEffect, useRef, useState, type ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
 
 interface SelectOption {
   label: string
@@ -24,6 +25,7 @@ interface SelectProps {
   description?: string
   error?: string
   required?: boolean
+  isLoading?: boolean
 }
 
 export function Select({
@@ -41,17 +43,19 @@ export function Select({
   label,
   description,
   error,
-  required = false
+  required = false,
+  isLoading = false
 }: SelectProps) {
+  const { t } = useTranslation()
   const [isOpen, setIsOpen] = useState(false)
   const [search, setSearch] = useState('')
   const containerRef = useRef<HTMLDivElement>(null)
 
   const isSelected = (val: string) => {
     if (isMultiple && Array.isArray(value)) {
-      return value.includes(val)
+      return value.some((v) => String(v) === String(val))
     }
-    return value === val
+    return String(value) === String(val)
   }
 
   const selectedOptions = options.filter((opt) => isSelected(opt.value))
@@ -98,6 +102,10 @@ export function Select({
   }
 
   const renderLabel = () => {
+    if (isLoading) {
+      return <span className="text-muted animate-pulse">{t('public.loadingText')}</span>
+    }
+
     if (selectedOptions.length === 0) {
       return <span className="text-muted block w-full truncate text-left">{placeholder}</span>
     }
@@ -137,7 +145,7 @@ export function Select({
         </label>
       )}
 
-      <div className={cn('relative w-full', isOpen ? 'z-[1001]' : 'z-0')} ref={containerRef}>
+      <div className={cn('relative w-full', isOpen ? 'z-1001' : 'z-0')} ref={containerRef}>
         <button
           type="button"
           disabled={disabled}

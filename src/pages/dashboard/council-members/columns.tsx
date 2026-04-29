@@ -34,7 +34,7 @@ export const getColumns = (t: TFunction, onDelete: (id: number, name: string) =>
     cell: (info) => <span>{info.getValue() || '-'}</span>
   }),
   columnHelper.accessor('gender', {
-    header: () => <span className="block text-center">{t('dashboard.council.form.genderLabel')}</span>,
+    header: () => <span className="block text-center">{t('public.gender.label')}</span>,
     enableGlobalFilter: false,
     filterFn: (row, columnId, filterValue) => {
       if (!filterValue || filterValue.length === 0) return true
@@ -49,7 +49,7 @@ export const getColumns = (t: TFunction, onDelete: (id: number, name: string) =>
     )
   }),
   columnHelper.accessor('status', {
-    header: () => <span className="block text-center">{t('dashboard.council.form.statusLabel')}</span>,
+    header: () => <span className="block text-center">{t('public.status.label')}</span>,
     enableGlobalFilter: false,
     filterFn: (row, columnId, filterValue) => {
       if (!filterValue || filterValue.length === 0) return true

@@ -36,8 +36,8 @@ export const ContactForm = ({ control, errors, isCreating, isUpdating, isEdit }:
           control={control}
           render={({ field: { value, onChange } }) => (
             <ImageUpload
-              label={t('dashboard.council.form.photoLabel')}
-              description={t('dashboard.massa.form.photoDescription')}
+              label={t('public.image.photoLabel')}
+              description={t('public.image.description')}
               error={errors.photo?.message}
               value={value as string | File | null}
               onChange={onChange}
@@ -51,7 +51,7 @@ export const ContactForm = ({ control, errors, isCreating, isUpdating, isEdit }:
           render={({ field: { value, onChange } }) => (
             <ImageUpload
               label={t('dashboard.council.form.ktpPhotoLabel')}
-              description={t('dashboard.massa.form.photoDescription')}
+              description={t('public.image.description')}
               error={errors.ktp_photo?.message}
               value={value as string | File | null}
               onChange={onChange}
@@ -84,9 +84,9 @@ export const ContactForm = ({ control, errors, isCreating, isUpdating, isEdit }:
               options={statusOptions}
               value={String(field.value)}
               onChange={(val) => field.onChange(val === 'true')}
-              label={t('dashboard.council.form.statusLabel')}
+              label={t('public.status.label')}
               error={errors.status?.message}
-              placeholder={t('dashboard.council.form.statusPlaceholder')}
+              placeholder={t('public.allStatuses')}
               className="w-full"
             />
           )}

@@ -44,7 +44,6 @@ export function ImageUpload({
   const [isCropping, setIsCropping] = useState(false)
 
   const MAX_SIZE = Number(import.meta.env.VITE_IMAGE_MAX_SIZE) || 2 * 1024 * 1024
-  const MAX_SIZE_MB = Number(import.meta.env.VITE_IMAGE_MAX_SIZE_MB) || 2
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     const file = acceptedFiles[0]
@@ -65,7 +64,7 @@ export function ImageUpload({
     maxSize: MAX_SIZE
   })
 
-  const sizeError = fileRejections.length > 0 ? t('public.imageUpload.fileTooLarge') : ''
+  const sizeError = fileRejections.length > 0 ? t('public.image.fileTooLarge') : ''
   const displayError = error || sizeError
 
   const onCropComplete = useCallback((_: Area, b: Area) => {
@@ -95,12 +94,16 @@ export function ImageUpload({
 
   const previewUrl = value instanceof File ? URL.createObjectURL(value) : value
 
-  // Determine container dimensions based on aspect
+  // Determine container style and classes
   const containerClasses = cn(
     'relative overflow-hidden rounded-2xl border-2 border-card-border transition-all duration-200',
-    currentAspect === 1 ? 'aspect-square max-w-[240px]' : 'aspect-video w-full',
     error ? 'border-red-500' : 'hover:border-primary/50'
   )
+
+  const containerStyle = {
+    aspectRatio: currentAspect,
+    maxWidth: currentAspect === 1 ? '240px' : currentAspect < 1 ? '200px' : '100%'
+  }
 
   return (
     <div className={cn('w-full space-y-2', className)}>
@@ -112,24 +115,23 @@ export function ImageUpload({
           className={cn(
             containerClasses,
             'bg-card-hover/20 flex cursor-pointer flex-col items-center justify-center border-dashed',
-            isDragActive ? 'border-primary bg-primary/5' : ''
+            isDragActive && 'bg-primary/5 border-primary border-solid'
           )}
+          style={containerStyle}
         >
           <input {...getInputProps()} />
-          <div className="flex flex-col items-center gap-3 p-6 text-center">
-            <div className="bg-primary/10 text-primary flex h-12 w-12 items-center justify-center rounded-full">
+          <div className="flex flex-col items-center gap-2 p-6 text-center">
+            <div className="bg-primary/10 text-primary rounded-full p-3">
               <Upload size={24} />
             </div>
-            <div>
-              <p className="text-foreground text-sm font-semibold">{t('public.imageUpload.dropzoneText')}</p>
-              <p className="text-muted mt-1 text-[10px] font-bold tracking-wider uppercase">
-                {t('public.imageUpload.maxSizeText', { size: MAX_SIZE_MB })}
-              </p>
+            <div className="space-y-1">
+              <p className="text-sm font-bold">{t('public.image.dropzoneText')}</p>
+              <p className="text-muted text-xs">{description}</p>
             </div>
           </div>
         </div>
       ) : (
-        <div className={containerClasses}>
+        <div className={containerClasses} style={containerStyle}>
           <img src={previewUrl} alt="Preview" className="h-full w-full object-cover" />
 
           {/* Always visible Delete Button in top right */}
@@ -139,7 +141,7 @@ export function ImageUpload({
             size="sm"
             onClick={handleRemove}
             className="absolute top-3 right-3 z-20 h-9 w-9 rounded-full! p-0 shadow-lg"
-            title={t('public.imageUpload.removeImage')}
+            title={t('public.image.removeImage')}
             icon={<Trash2 size={16} />}
           />
         </div>
@@ -149,7 +151,7 @@ export function ImageUpload({
       {displayError && <p className="text-xs text-red-500">{displayError}</p>}
 
       {/* Cropping Modal */}
-      <Modal isOpen={isCropping} onClose={() => setIsCropping(false)} title={t('public.imageUpload.cropTitle')} className="max-w-2xl">
+      <Modal isOpen={isCropping} onClose={() => setIsCropping(false)} title={t('public.image.cropTitle')} className="max-w-2xl">
         <div className="space-y-6">
           <div className="relative h-80 w-full overflow-hidden rounded-xl bg-slate-900">
             {tempImage && (
@@ -168,7 +170,7 @@ export function ImageUpload({
           <div className="space-y-4">
             {showAspectSelection && (
               <div className="flex flex-col gap-2">
-                <label className="text-foreground text-xs font-bold tracking-wider uppercase">{t('public.imageUpload.aspectRatio')}</label>
+                <label className="text-foreground text-xs font-bold tracking-wider uppercase">{t('public.image.aspectRatio')}</label>
                 <div className="flex flex-wrap gap-2">
                   {aspectRatios.map((ratio) => (
                     <button
@@ -209,7 +211,7 @@ export function ImageUpload({
               {t('public.cancelText')}
             </Button>
             <Button variant="primary" onClick={handleSaveCrop}>
-              {t('public.imageUpload.saveCrop')}
+              {t('public.image.saveCrop')}
             </Button>
           </div>
         </div>

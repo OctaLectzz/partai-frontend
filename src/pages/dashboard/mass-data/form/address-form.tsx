@@ -78,7 +78,7 @@ export const AddressForm = ({ control, errors }: AddressFormProps) => {
   }, [districtId, villages, villageId, isLoadingVillages, setValue])
 
   return (
-    <Card className="flex flex-col gap-6 overflow-visible p-8 shadow-xl">
+    <Card className="flex flex-col gap-6 p-8 shadow-xl">
       <div className="border-primary border-b pb-4">
         <h3 className="text-foreground text-lg font-bold">{t('dashboard.massa.form.addressSection')}</h3>
       </div>
@@ -89,7 +89,7 @@ export const AddressForm = ({ control, errors }: AddressFormProps) => {
           control={control}
           render={({ field }) => (
             <Textarea
-              label={t('dashboard.massa.form.addressLabel')}
+              label={t('public.address.label')}
               placeholder={t('dashboard.massa.form.addressPlaceholder')}
               description={t('dashboard.massa.form.addressDescription')}
               error={errors.address?.message}
@@ -106,7 +106,7 @@ export const AddressForm = ({ control, errors }: AddressFormProps) => {
             render={({ field }) => (
               <Input
                 type="number"
-                label={t('dashboard.massa.form.rtLabel')}
+                label={t('public.address.rt')}
                 placeholder={t('dashboard.massa.form.rtPlaceholder')}
                 error={errors.rt?.message}
                 required
@@ -120,7 +120,7 @@ export const AddressForm = ({ control, errors }: AddressFormProps) => {
             render={({ field }) => (
               <Input
                 type="number"
-                label={t('dashboard.massa.form.rwLabel')}
+                label={t('public.address.rw')}
                 placeholder={t('dashboard.massa.form.rwPlaceholder')}
                 error={errors.rw?.message}
                 required
@@ -134,7 +134,7 @@ export const AddressForm = ({ control, errors }: AddressFormProps) => {
             render={({ field }) => (
               <Input
                 type="number"
-                label={t('dashboard.massa.form.postalCodeLabel')}
+                label={t('public.address.postalCode')}
                 placeholder={t('dashboard.massa.form.postalCodePlaceholder')}
                 error={errors.postal_code?.message}
                 required
@@ -156,9 +156,9 @@ export const AddressForm = ({ control, errors }: AddressFormProps) => {
                   field.onChange(val)
                   setUserChangedRegion(true)
                 }}
-                label={t('dashboard.massa.form.provinceLabel')}
+                label={t('public.address.province')}
                 error={errors.province_id?.message}
-                placeholder={t('dashboard.massa.form.provinceLabel')}
+                placeholder={t('public.address.province')}
                 required
               />
             )}
@@ -176,9 +176,9 @@ export const AddressForm = ({ control, errors }: AddressFormProps) => {
                   setUserChangedRegion(true)
                 }}
                 disabled={!provinceId}
-                label={t('dashboard.massa.form.regencyLabel')}
+                label={t('public.address.regency')}
                 error={errors.regency_id?.message}
-                placeholder={t('dashboard.massa.form.regencyLabel')}
+                placeholder={t('public.address.regency')}
                 required
               />
             )}
@@ -196,9 +196,9 @@ export const AddressForm = ({ control, errors }: AddressFormProps) => {
                   setUserChangedRegion(true)
                 }}
                 disabled={!regencyId}
-                label={t('dashboard.massa.form.districtLabel')}
+                label={t('public.address.district')}
                 error={errors.district_id?.message}
-                placeholder={t('dashboard.massa.form.districtLabel')}
+                placeholder={t('public.address.district')}
                 required
               />
             )}
@@ -216,9 +216,9 @@ export const AddressForm = ({ control, errors }: AddressFormProps) => {
                   setUserChangedRegion(true)
                 }}
                 disabled={!districtId}
-                label={t('dashboard.massa.form.villageLabel')}
+                label={t('public.address.village')}
                 error={errors.village_id?.message}
-                placeholder={t('dashboard.massa.form.villageLabel')}
+                placeholder={t('public.address.village')}
                 required
               />
             )}

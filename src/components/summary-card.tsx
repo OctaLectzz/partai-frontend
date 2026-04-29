@@ -11,7 +11,7 @@ interface SummaryCardProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export function SummaryCard({ title, value, borderColorClass, valueColorClass, className = '', ...props }: SummaryCardProps) {
   return (
-    <Card withTopBar={false} className={cn('border-l-4', borderColorClass, className)} {...props}>
+    <Card withTopBar={false} className={cn('overflow-hidden rounded-2xl border-l-4', borderColorClass, className)} {...props}>
       <CardContent className="p-6">
         <div className="relative z-10 flex flex-col gap-2">
           <span className="text-muted text-xs font-bold tracking-wider uppercase">{title}</span>

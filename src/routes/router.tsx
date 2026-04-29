@@ -24,6 +24,8 @@ import CouncilDetail from '@/pages/dashboard/council-members/show'
 import EventManagement from '@/pages/dashboard/event-management'
 import EventForm from '@/pages/dashboard/event-management/form'
 import EventDetail from '@/pages/dashboard/event-management/show'
+import DigitalMembershipCard from '@/pages/dashboard/kta'
+import KtaShow from '@/pages/dashboard/kta/show'
 import MassData from '@/pages/dashboard/mass-data'
 import MassaForm from '@/pages/dashboard/mass-data/form'
 import MassaDetail from '@/pages/dashboard/mass-data/show'
@@ -97,6 +99,13 @@ export const router = createBrowserRouter([
                   { path: 'create', element: <CouncilForm /> },
                   { path: 'edit/:id', element: <CouncilForm /> },
                   { path: 'show/:id', element: <CouncilDetail /> }
+                ]
+              },
+              {
+                path: 'kta',
+                children: [
+                  { index: true, element: <DigitalMembershipCard /> },
+                  { path: 'show/:id', element: <KtaShow /> }
                 ]
               }
             ]

@@ -3,6 +3,8 @@ export default {
   loadingText: 'Loading...',
   searchText: 'Search',
   selectText: 'Select',
+  select: 'Select',
+  live: 'LIVE',
   cancelText: 'Cancel',
   backText: 'Back',
   confirmDeleteText: 'Yes, Delete',
@@ -15,9 +17,14 @@ export default {
   searchStatusPlaceholder: 'Search status...',
   backToList: 'Back to List',
   noData: 'Data not found.',
+  preview: 'Preview',
+  frontView: 'Front View',
+  backView: 'Back View',
   locationVerificationLabel: 'Location Verification (Drag Pin if incorrect)',
   locationPickerHelp: 'Drag pin for better accuracy',
-  imageUpload: {
+  image: {
+    photoLabel: 'Profile Photo',
+    description: 'Format: JPG, PNG. Maximum 2MB.',
     dropzoneText: 'Drag and drop an image here, or click to select',
     cropTitle: 'Adjust Image',
     aspectRatio: 'Aspect Ratio',
@@ -29,10 +36,24 @@ export default {
     maxSizeText: 'Max {{size}}MB'
   },
   status: {
+    label: 'Status',
     active: 'Active',
     inactive: 'Inactive'
   },
+  address: {
+    label: 'Address',
+    rt: 'RT',
+    rw: 'RW',
+    province: 'Province',
+    regency: 'Regency',
+    district: 'District',
+    village: 'Village',
+    postalCode: 'Postal Code',
+    latitude: 'Latitude',
+    longitude: 'Longitude'
+  },
   gender: {
+    label: 'Gender',
     male: 'Male',
     female: 'Female'
   }

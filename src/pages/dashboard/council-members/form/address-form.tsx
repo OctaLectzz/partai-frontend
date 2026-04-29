@@ -78,7 +78,7 @@ export const AddressForm = ({ control, errors }: AddressFormProps) => {
   }, [districtId, villages, villageId, isLoadingVillages, setValue])
 
   return (
-    <Card className="flex flex-col gap-6 overflow-visible p-8 shadow-xl">
+    <Card className="flex flex-col gap-6 p-8 shadow-xl">
       <div className="border-primary border-b pb-4">
         <h3 className="text-foreground text-lg font-bold">{t('dashboard.council.form.addressSection')}</h3>
       </div>
@@ -89,7 +89,7 @@ export const AddressForm = ({ control, errors }: AddressFormProps) => {
           control={control}
           render={({ field }) => (
             <Textarea
-              label={t('dashboard.council.form.addressLabel')}
+              label={t('public.address.label')}
               placeholder={t('dashboard.council.form.addressPlaceholder')}
               error={errors.address?.message}
               required
@@ -104,28 +104,14 @@ export const AddressForm = ({ control, errors }: AddressFormProps) => {
             name="rt"
             control={control}
             render={({ field }) => (
-              <Input
-                type="number"
-                label={t('dashboard.council.form.rtLabel')}
-                error={errors.rt?.message}
-                required
-                {...field}
-                value={field.value || ''}
-              />
+              <Input type="number" label={t('public.address.rt')} error={errors.rt?.message} required {...field} value={field.value || ''} />
             )}
           />
           <Controller
             name="rw"
             control={control}
             render={({ field }) => (
-              <Input
-                type="number"
-                label={t('dashboard.council.form.rwLabel')}
-                error={errors.rw?.message}
-                required
-                {...field}
-                value={field.value || ''}
-              />
+              <Input type="number" label={t('public.address.rw')} error={errors.rw?.message} required {...field} value={field.value || ''} />
             )}
           />
           <Controller
@@ -134,7 +120,7 @@ export const AddressForm = ({ control, errors }: AddressFormProps) => {
             render={({ field }) => (
               <Input
                 type="number"
-                label={t('dashboard.council.form.postalCodeLabel')}
+                label={t('public.address.postalCode')}
                 placeholder={t('dashboard.council.form.postalCodePlaceholder')}
                 error={errors.postal_code?.message}
                 required
@@ -157,9 +143,9 @@ export const AddressForm = ({ control, errors }: AddressFormProps) => {
                   field.onChange(val)
                   setUserChangedRegion(true)
                 }}
-                label={t('dashboard.council.form.provinceLabel')}
+                label={t('public.address.province')}
                 error={errors.province_id?.message}
-                placeholder={t('dashboard.council.form.provinceLabel')}
+                placeholder={t('public.address.province')}
                 required
               />
             )}
@@ -177,9 +163,9 @@ export const AddressForm = ({ control, errors }: AddressFormProps) => {
                   setUserChangedRegion(true)
                 }}
                 disabled={!provinceId}
-                label={t('dashboard.council.form.regencyLabel')}
+                label={t('public.address.regency')}
                 error={errors.regency_id?.message}
-                placeholder={t('dashboard.council.form.regencyLabel')}
+                placeholder={t('public.address.regency')}
                 required
               />
             )}
@@ -197,9 +183,9 @@ export const AddressForm = ({ control, errors }: AddressFormProps) => {
                   setUserChangedRegion(true)
                 }}
                 disabled={!regencyId}
-                label={t('dashboard.council.form.districtLabel')}
+                label={t('public.address.district')}
                 error={errors.district_id?.message}
-                placeholder={t('dashboard.council.form.districtLabel')}
+                placeholder={t('public.address.district')}
                 required
               />
             )}
@@ -217,9 +203,9 @@ export const AddressForm = ({ control, errors }: AddressFormProps) => {
                   setUserChangedRegion(true)
                 }}
                 disabled={!districtId}
-                label={t('dashboard.council.form.villageLabel')}
+                label={t('public.address.village')}
                 error={errors.village_id?.message}
-                placeholder={t('dashboard.council.form.villageLabel')}
+                placeholder={t('public.address.village')}
                 required
               />
             )}

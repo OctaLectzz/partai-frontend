@@ -90,8 +90,8 @@ export function CouncilFilterSection({ t, globalFilter, onGlobalFilterChange, co
             value={genderFilter}
             onChange={handleGenderChange}
             isMultiple
-            placeholder={t('dashboard.council.form.genderLabel')}
-            searchPlaceholder={t('dashboard.council.form.genderPlaceholder')}
+            placeholder={t('public.gender.label')}
+            searchPlaceholder={t('public.gender.label')}
             noOptionsMessage={t('dashboard.council.emptyMessage')}
           />
         </div>

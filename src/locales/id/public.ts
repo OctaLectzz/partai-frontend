@@ -3,6 +3,8 @@ export default {
   loadingText: 'Memuat...',
   searchText: 'Cari',
   selectText: 'Pilih',
+  select: 'Pilih',
+  live: 'LANGSUNG',
   cancelText: 'Batal',
   backText: 'Kembali',
   confirmDeleteText: 'Ya, Hapus',
@@ -15,9 +17,14 @@ export default {
   searchStatusPlaceholder: 'Cari status...',
   backToList: 'Kembali ke Daftar',
   noData: 'Data tidak ditemukan.',
+  preview: 'Pratinjau',
+  frontView: 'Tampilan Depan',
+  backView: 'Tampilan Belakang',
   locationVerificationLabel: 'Verifikasi Lokasi (Geser Pin jika tidak sesuai)',
   locationPickerHelp: 'Geser pin untuk akurasi lebih baik',
-  imageUpload: {
+  image: {
+    photoLabel: 'Foto Profil',
+    description: 'Format: JPG, PNG. Maksimal 2MB.',
     dropzoneText: 'Tarik dan lepas gambar di sini, atau klik untuk memilih',
     cropTitle: 'Sesuaikan Gambar',
     aspectRatio: 'Rasio Aspek',
@@ -29,10 +36,24 @@ export default {
     maxSizeText: 'Maks {{size}}MB'
   },
   status: {
+    label: 'Status',
     active: 'Aktif',
     inactive: 'Tidak Aktif'
   },
+  address: {
+    label: 'Alamat',
+    rt: 'RT',
+    rw: 'RW',
+    province: 'Provinsi',
+    regency: 'Kabupaten/Kota',
+    district: 'Kecamatan',
+    village: 'Kelurahan/Desa',
+    postalCode: 'Kode Pos',
+    latitude: 'Lintang (Latitude)',
+    longitude: 'Bujur (Longitude)'
+  },
   gender: {
+    label: 'Jenis Kelamin',
     male: 'Laki-laki',
     female: 'Perempuan'
   }

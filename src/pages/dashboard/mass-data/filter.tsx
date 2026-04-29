@@ -74,7 +74,7 @@ export function MassFilterSection({ t, globalFilter, onGlobalFilterChange, colum
             isMultiple
             placeholder={t('public.allStatuses')}
             searchPlaceholder={t('public.searchStatusPlaceholder')}
-            noOptionsMessage={t('dashboard.massa.table.emptyMessage')}
+            noOptionsMessage={t('dashboard.massa.emptyMessage')}
           />
         </div>
 
@@ -85,9 +85,9 @@ export function MassFilterSection({ t, globalFilter, onGlobalFilterChange, colum
             value={genderFilter}
             onChange={handleGenderChange}
             isMultiple
-            placeholder={t('dashboard.massa.form.genderLabel')}
-            searchPlaceholder={t('dashboard.massa.form.genderPlaceholder')}
-            noOptionsMessage={t('dashboard.massa.table.emptyMessage')}
+            placeholder={t('public.gender.label')}
+            searchPlaceholder={t('public.gender.label')}
+            noOptionsMessage={t('dashboard.massa.emptyMessage')}
           />
         </div>
 

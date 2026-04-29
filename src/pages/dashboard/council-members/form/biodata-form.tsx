@@ -16,8 +16,8 @@ export function BiodataForm({ control, errors }: BiodataFormProps) {
   const { t } = useTranslation()
 
   const genderOptions = [
-    { label: t('dashboard.council.form.genderMale'), value: 'M' },
-    { label: t('dashboard.council.form.genderFemale'), value: 'F' }
+    { label: t('public.gender.male'), value: 'M' },
+    { label: t('public.gender.female'), value: 'F' }
   ]
 
   const religionOptions = [
@@ -45,7 +45,7 @@ export function BiodataForm({ control, errors }: BiodataFormProps) {
   ]
 
   return (
-    <Card className="flex flex-col gap-6 overflow-visible p-6 shadow-sm">
+    <Card className="flex flex-col gap-6 p-6 shadow-sm">
       <div className="border-card-border mb-2 flex items-center gap-2 border-b pb-4">
         <FileText className="text-primary-dark h-5 w-5" />
         <h2 className="text-foreground text-lg font-bold">{t('dashboard.council.form.biodataSection')}</h2>
@@ -88,7 +88,7 @@ export function BiodataForm({ control, errors }: BiodataFormProps) {
           control={control}
           render={({ field }) => (
             <Select
-              label={t('dashboard.council.form.genderLabel')}
+              label={t('public.gender.label')}
               options={genderOptions}
               error={errors.gender?.message}
               value={field.value || ''}

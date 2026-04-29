@@ -91,11 +91,11 @@ export function LocationPicker({ lat, lng, onChange, searchQuery, label, helpTex
 
       <div className="bg-card-hover/30 flex items-center justify-between rounded-lg px-3 py-2 font-mono text-[11px]">
         <div className="flex gap-4">
-          <span className="text-muted-foreground">
-            <span className="text-primary font-bold">LAT:</span> {position[0].toFixed(6)}
+          <span className="text-muted-foreground uppercase">
+            <span className="text-primary font-bold">{t('public.address.latitude')}:</span> {position[0].toFixed(6)}
           </span>
-          <span className="text-muted-foreground">
-            <span className="text-primary font-bold">LNG:</span> {position[1].toFixed(6)}
+          <span className="text-muted-foreground uppercase">
+            <span className="text-primary font-bold">{t('public.address.longitude')}:</span> {position[1].toFixed(6)}
           </span>
         </div>
         {defaultHelpText && <span className="text-muted text-[10px] italic">{defaultHelpText}</span>}
