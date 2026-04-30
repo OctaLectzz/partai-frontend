@@ -497,7 +497,15 @@ export default {
       clusterTitle: 'Perilaku Kluster',
       clusterDescription: 'Marker dikelompokkan menjadi kluster. Angka menunjukkan total massa di area tersebut. Klik untuk memperbesar kluster.',
       filterTitle: 'Filter Wilayah',
-      filterDescription: 'Gunakan filter provinsi dan kabupaten di atas peta untuk fokus pada wilayah tertentu yang diminati.'
+      filterDescription: 'Gunakan filter provinsi dan kabupaten di atas peta untuk fokus pada wilayah tertentu yang diminati.',
+      distributionTitle: 'Tabel Distribusi',
+      distributionDescription: 'Gunakan tabel di sebelah kanan untuk melihat persentase distribusi massa per provinsi atau kabupaten.',
+      autoCenterTitle: 'Fokus Otomatis',
+      autoCenterDescription: 'Ketika memilih provinsi atau kabupaten pada filter, peta akan secara otomatis mengarahkan fokus ke wilayah tersebut.',
+      statsTitle: 'Ringkasan Statistik',
+      statsDescription: 'Perhatikan kartu statistik di atas untuk memantau total data, persebaran, dan jumlah event secara langsung.',
+      popupTitle: 'Informasi Popup',
+      popupDescription: 'Setiap marker memiliki popup interaktif yang menampilkan nama, area, serta status validasi anggota.'
     }
   }
 }

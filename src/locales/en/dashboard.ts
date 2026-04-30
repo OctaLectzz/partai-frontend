@@ -494,7 +494,15 @@ export default {
       clusterTitle: 'Cluster Behavior',
       clusterDescription: 'Markers are grouped into clusters. The number shows total massa in that area. Click to zoom into the cluster.',
       filterTitle: 'Region Filter',
-      filterDescription: 'Use province and regency filters above the map to focus on specific regions of interest.'
+      filterDescription: 'Use province and regency filters above the map to focus on specific regions of interest.',
+      distributionTitle: 'Distribution Table',
+      distributionDescription: 'Use the table on the right to view the mass distribution percentage by province or regency.',
+      autoCenterTitle: 'Auto Centering',
+      autoCenterDescription: 'When selecting a province or regency in the filter, the map will automatically center on that region.',
+      statsTitle: 'Summary Stats',
+      statsDescription: 'Keep an eye on the summary cards above to monitor total data, spread, and event count in real-time.',
+      popupTitle: 'Popup Information',
+      popupDescription: 'Each marker features an interactive popup displaying the name, area, and member validation status.'
     }
   }
 }

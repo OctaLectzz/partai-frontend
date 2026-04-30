@@ -199,6 +199,10 @@ export function injectClusterStyles(): void {
       padding: 0;
       overflow: hidden;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1);
+      background: var(--color-card, #ffffff);
+    }
+    .dark .massa-popup-container .leaflet-popup-content-wrapper {
+      background: #1e2030;
     }
     .massa-popup-container .leaflet-popup-content {
       margin: 14px 20px;
@@ -207,11 +211,15 @@ export function injectClusterStyles(): void {
     }
     .massa-popup-container .leaflet-popup-tip {
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      background: var(--color-card, #ffffff);
+    }
+    .dark .massa-popup-container .leaflet-popup-tip {
+      background: #1e2030;
     }
     .massa-popup-container .leaflet-popup-close-button {
       top: 8px !important;
       right: 8px !important;
-      color: white !important;
+      color: #64748b !important;
       font-size: 20px !important;
       width: 28px !important;
       height: 28px !important;
@@ -220,10 +228,17 @@ export function injectClusterStyles(): void {
       justify-content: center;
       z-index: 10;
     }
+    .dark .massa-popup-container .leaflet-popup-close-button {
+      color: #f1f5f9 !important;
+    }
     .massa-popup-container .leaflet-popup-close-button:hover {
-      color: white !important;
-      background: rgba(255,255,255,0.2);
+      color: #0f172a !important;
+      background: rgba(0,0,0,0.05);
       border-radius: 50%;
+    }
+    .dark .massa-popup-container .leaflet-popup-close-button:hover {
+      color: white !important;
+      background: rgba(255,255,255,0.1);
     }
   `
   document.head.appendChild(style)

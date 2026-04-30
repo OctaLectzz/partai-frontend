@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils'
 import type { TFunction } from 'i18next'
-import { BookOpen, Layers, MapPin, MousePointer, ZoomIn } from 'lucide-react'
+import { Activity, BarChart3, BookOpen, Layers, MapPin, MessageSquare, MousePointer, Navigation, ZoomIn } from 'lucide-react'
 
 interface MapGuideProps {
   t: TFunction
@@ -28,6 +28,26 @@ export function MapGuide({ t, className = '' }: MapGuideProps) {
       icon: MapPin,
       title: t('dashboard.distributionMap.guide.filterTitle'),
       description: t('dashboard.distributionMap.guide.filterDescription')
+    },
+    {
+      icon: BarChart3,
+      title: t('dashboard.distributionMap.guide.distributionTitle'),
+      description: t('dashboard.distributionMap.guide.distributionDescription')
+    },
+    {
+      icon: Navigation,
+      title: t('dashboard.distributionMap.guide.autoCenterTitle'),
+      description: t('dashboard.distributionMap.guide.autoCenterDescription')
+    },
+    {
+      icon: Activity,
+      title: t('dashboard.distributionMap.guide.statsTitle'),
+      description: t('dashboard.distributionMap.guide.statsDescription')
+    },
+    {
+      icon: MessageSquare,
+      title: t('dashboard.distributionMap.guide.popupTitle'),
+      description: t('dashboard.distributionMap.guide.popupDescription')
     }
   ]
 
@@ -45,9 +65,9 @@ export function MapGuide({ t, className = '' }: MapGuideProps) {
 
       <div className="grid grid-cols-1 gap-0 divide-y divide-gray-100 sm:grid-cols-2 sm:divide-x sm:divide-y-0 dark:divide-gray-800">
         {steps.map((step, idx) => (
-          <div key={idx} className="flex items-start gap-3 p-4">
-            <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-50 dark:bg-amber-900/10">
-              <step.icon className="h-4 w-4 text-amber-600 dark:text-amber-400" />
+          <div key={idx} className="flex items-start gap-5 p-4">
+            <div className="bg-primary/10 mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg">
+              <step.icon className="text-primary h-4 w-4" />
             </div>
             <div>
               <h4 className="text-foreground text-xs font-bold">{step.title}</h4>

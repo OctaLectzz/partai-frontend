@@ -114,7 +114,7 @@ export default function DistributionMap() {
 
         <div className="lg:col-span-1">
           {/* Distribution Table */}
-          <DistributionTable t={t} massas={filteredMassas} className="h-full" />
+          <DistributionTable t={t} massas={massas} isLoading={isLoadingMassa} className="h-full" />
         </div>
       </div>
     </div>

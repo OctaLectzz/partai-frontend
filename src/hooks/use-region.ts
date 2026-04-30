@@ -31,3 +31,24 @@ export const useVillages = (districtId?: string) => {
     enabled: !!districtId
   })
 }
+
+export const useAllRegencies = () => {
+  return useQuery({
+    queryKey: ['all-regencies'],
+    queryFn: regionApi.getAllRegencies
+  })
+}
+
+export const useAllDistricts = () => {
+  return useQuery({
+    queryKey: ['all-districts'],
+    queryFn: regionApi.getAllDistricts
+  })
+}
+
+export const useAllVillages = () => {
+  return useQuery({
+    queryKey: ['all-villages'],
+    queryFn: regionApi.getAllVillages
+  })
+}
