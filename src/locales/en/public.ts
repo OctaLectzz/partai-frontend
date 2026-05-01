@@ -57,5 +57,14 @@ export default {
     label: 'Gender',
     male: 'Male',
     female: 'Female'
+  },
+  media: {
+    dropzoneText: 'Drag and drop files here, or click to select',
+    description: 'Supports images, videos, and documents. Max 50MB per file.',
+    existingFiles: 'Existing Files',
+    newFiles: 'New Files',
+    captionPlaceholder: 'Add caption (optional)...',
+    maxFilesError: 'Maximum {{count}} files allowed.',
+    fileTooLarge: 'One or more files exceed the size limit.'
   }
 }

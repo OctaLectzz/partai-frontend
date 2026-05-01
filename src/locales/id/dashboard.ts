@@ -507,5 +507,124 @@ export default {
       popupTitle: 'Informasi Popup',
       popupDescription: 'Setiap marker memiliki popup interaktif yang menampilkan nama, area, serta status validasi anggota.'
     }
+  },
+  councilReport: {
+    title: 'Laporan Kegiatan Dewan',
+    subtitle: 'Kelola laporan kegiatan dari anggota dewan',
+    createNew: 'Tambah Laporan',
+    emptyMessage: 'Tidak ada laporan ditemukan.',
+    searchPlaceholder: 'Cari judul atau lokasi...',
+    allReportTypes: 'Semua Jenis Laporan',
+    searchReportTypePlaceholder: 'Cari jenis laporan...',
+    status: {
+      draft: 'Draf',
+      submitted: 'Diajukan',
+      approved: 'Disetujui',
+      rejected: 'Ditolak'
+    },
+    reportType: {
+      meeting: 'Rapat',
+      visit: 'Kunjungan',
+      socialization: 'Sosialisasi',
+      supervision: 'Pengawasan',
+      aspiration: 'Aspirasi',
+      other: 'Lainnya'
+    },
+    summary: {
+      totalReports: 'Total Laporan',
+      approved: 'Disetujui',
+      submitted: 'Menunggu Review',
+      draft: 'Draf'
+    },
+    deleteConfirm: {
+      title: 'Hapus Laporan',
+      message: 'Apakah Anda yakin ingin menghapus laporan ini? Tindakan ini tidak dapat dibatalkan.'
+    },
+    table: {
+      tableTitle: 'Daftar Laporan',
+      tableSubtitle: 'Kelola dan monitor semua laporan kegiatan dewan',
+      title: 'Laporan',
+      reportType: 'Jenis',
+      activityDate: 'Tanggal Kegiatan',
+      location: 'Lokasi',
+      media: 'Media',
+      status: 'Status',
+      actions: 'Aksi'
+    },
+    form: {
+      createTitle: 'Tambah Laporan',
+      createSubtitle: 'Isi formulir di bawah ini untuk menambahkan laporan kegiatan dewan baru.',
+      editTitle: 'Edit Laporan',
+      editSubtitle: 'Perbarui informasi laporan kegiatan dewan.',
+      titleLabel: 'Judul Laporan',
+      titlePlaceholder: 'Contoh: Rapat Koordinasi Wilayah',
+      descriptionLabel: 'Deskripsi Kegiatan',
+      descriptionPlaceholder: 'Jelaskan kegiatan secara detail...',
+      activityDateLabel: 'Tanggal Kegiatan',
+      startTimeLabel: 'Waktu Mulai',
+      endTimeLabel: 'Waktu Selesai',
+      locationLabel: 'Lokasi',
+      locationPlaceholder: 'Masukkan lokasi kegiatan...',
+      agendaLabel: 'Agenda',
+      agendaPlaceholder: 'Daftar agenda yang dibahas...',
+      resultLabel: 'Hasil',
+      resultPlaceholder: 'Jelaskan hasil dan capaian...',
+      recommendationLabel: 'Rekomendasi',
+      recommendationPlaceholder: 'Saran dan rekomendasi...',
+      reportTypeLabel: 'Jenis Laporan',
+      reportTypePlaceholder: 'Pilih Jenis Laporan',
+      participantsCountLabel: 'Jumlah Peserta',
+      participantsCountPlaceholder: 'Jumlah peserta',
+      statusLabel: 'Status',
+      statusPlaceholder: 'Pilih Status',
+      rejectionNoteLabel: 'Catatan Penolakan',
+      rejectionNotePlaceholder: 'Alasan penolakan...',
+      mediaLabel: 'Media Dokumentasi',
+      mediaDescription: 'Unggah gambar, video, atau dokumen (maks 50MB per file)',
+      submitCreate: 'Simpan Laporan',
+      submitUpdate: 'Perbarui Laporan'
+    },
+    validate: {
+      titleRequired: 'Judul laporan wajib diisi.',
+      titleMax: 'Judul tidak boleh lebih dari 255 karakter.',
+      descriptionRequired: 'Deskripsi wajib diisi.',
+      reportTypeRequired: 'Jenis laporan wajib dipilih.',
+      activityDateRequired: 'Tanggal kegiatan wajib diisi.',
+      locationRequired: 'Lokasi wajib diisi.',
+      locationMax: 'Lokasi tidak boleh lebih dari 255 karakter.',
+      statusRequired: 'Status wajib dipilih.'
+    },
+    response: {
+      successCreateMsg: 'Laporan berhasil dibuat!',
+      failedCreateMsg: 'Gagal membuat laporan.',
+      successUpdateMsg: 'Laporan berhasil diperbarui!',
+      failedUpdateMsg: 'Gagal memperbarui laporan.',
+      successDeleteMsg: 'Laporan berhasil dihapus!',
+      failedDeleteMsg: 'Gagal menghapus laporan.',
+      successDeleteMediaMsg: 'Media berhasil dihapus!',
+      failedDeleteMediaMsg: 'Gagal menghapus media.'
+    },
+    detail: {
+      title: 'Detail Laporan',
+      subtitle: 'Informasi lengkap laporan kegiatan dewan.',
+      dateLabel: 'Tanggal Kegiatan',
+      timeLabel: 'Waktu',
+      locationLabel: 'Lokasi',
+      participantsLabel: 'Peserta',
+      agendaLabel: 'Agenda',
+      resultLabel: 'Hasil',
+      recommendationLabel: 'Rekomendasi',
+      descriptionLabel: 'Deskripsi Lengkap',
+      reportInfoTitle: 'Informasi Laporan',
+      reportTypeLabel: 'Jenis Laporan',
+      submitterLabel: 'Diajukan Oleh',
+      createdAtLabel: 'Dibuat Pada',
+      rejectionNoteLabel: 'Catatan Penolakan',
+      editReport: 'Edit Laporan',
+      mediaTitle: 'Media Dokumentasi',
+      photosLabel: 'Foto',
+      videosLabel: 'Video',
+      documentsLabel: 'Dokumen'
+    }
   }
 }

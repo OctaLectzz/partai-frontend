@@ -57,5 +57,14 @@ export default {
     label: 'Jenis Kelamin',
     male: 'Laki-laki',
     female: 'Perempuan'
+  },
+  media: {
+    dropzoneText: 'Tarik dan lepas file di sini, atau klik untuk memilih',
+    description: 'Mendukung gambar, video, dan dokumen. Maks 50MB per file.',
+    existingFiles: 'File yang Ada',
+    newFiles: 'File Baru',
+    captionPlaceholder: 'Tambahkan keterangan (opsional)...',
+    maxFilesError: 'Maksimal {{count}} file diperbolehkan.',
+    fileTooLarge: 'Satu atau lebih file melebihi batas ukuran.'
   }
 }

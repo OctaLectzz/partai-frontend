@@ -504,5 +504,124 @@ export default {
       popupTitle: 'Popup Information',
       popupDescription: 'Each marker features an interactive popup displaying the name, area, and member validation status.'
     }
+  },
+  councilReport: {
+    title: 'Council Activity Reports',
+    subtitle: 'Manage activity reports from council members',
+    createNew: 'Add Report',
+    emptyMessage: 'No reports found.',
+    searchPlaceholder: 'Search title or location...',
+    allReportTypes: 'All Report Types',
+    searchReportTypePlaceholder: 'Search report type...',
+    status: {
+      draft: 'Draft',
+      submitted: 'Submitted',
+      approved: 'Approved',
+      rejected: 'Rejected'
+    },
+    reportType: {
+      meeting: 'Meeting',
+      visit: 'Visit',
+      socialization: 'Socialization',
+      supervision: 'Supervision',
+      aspiration: 'Aspiration',
+      other: 'Other'
+    },
+    summary: {
+      totalReports: 'Total Reports',
+      approved: 'Approved',
+      submitted: 'Pending Review',
+      draft: 'Draft'
+    },
+    deleteConfirm: {
+      title: 'Delete Report',
+      message: 'Are you sure you want to delete this report? This action cannot be undone.'
+    },
+    table: {
+      tableTitle: 'Report List',
+      tableSubtitle: 'Manage and monitor all council activity reports',
+      title: 'Report',
+      reportType: 'Type',
+      activityDate: 'Activity Date',
+      location: 'Location',
+      media: 'Media',
+      status: 'Status',
+      actions: 'Actions'
+    },
+    form: {
+      createTitle: 'Create Report',
+      createSubtitle: 'Fill in the form below to add a new council activity report.',
+      editTitle: 'Edit Report',
+      editSubtitle: 'Update existing council activity report information.',
+      titleLabel: 'Report Title',
+      titlePlaceholder: 'Example: Regional Coordination Meeting',
+      descriptionLabel: 'Activity Description',
+      descriptionPlaceholder: 'Describe the activity in detail...',
+      activityDateLabel: 'Activity Date',
+      startTimeLabel: 'Start Time',
+      endTimeLabel: 'End Time',
+      locationLabel: 'Location',
+      locationPlaceholder: 'Enter activity location...',
+      agendaLabel: 'Agenda',
+      agendaPlaceholder: 'List of agenda items discussed...',
+      resultLabel: 'Result',
+      resultPlaceholder: 'Describe the results and outcomes...',
+      recommendationLabel: 'Recommendation',
+      recommendationPlaceholder: 'Suggestions and recommendations...',
+      reportTypeLabel: 'Report Type',
+      reportTypePlaceholder: 'Select Report Type',
+      participantsCountLabel: 'Participants Count',
+      participantsCountPlaceholder: 'Number of participants',
+      statusLabel: 'Status',
+      statusPlaceholder: 'Select Status',
+      rejectionNoteLabel: 'Rejection Note',
+      rejectionNotePlaceholder: 'Reason for rejection...',
+      mediaLabel: 'Documentation Media',
+      mediaDescription: 'Upload images, videos, or documents (max 50MB each)',
+      submitCreate: 'Save Report',
+      submitUpdate: 'Update Report'
+    },
+    validate: {
+      titleRequired: 'Report title is required.',
+      titleMax: 'Title must not exceed 255 characters.',
+      descriptionRequired: 'Description is required.',
+      reportTypeRequired: 'Report type is required.',
+      activityDateRequired: 'Activity date is required.',
+      locationRequired: 'Location is required.',
+      locationMax: 'Location must not exceed 255 characters.',
+      statusRequired: 'Status is required.'
+    },
+    response: {
+      successCreateMsg: 'Report created successfully!',
+      failedCreateMsg: 'Failed to create report.',
+      successUpdateMsg: 'Report updated successfully!',
+      failedUpdateMsg: 'Failed to update report.',
+      successDeleteMsg: 'Report deleted successfully!',
+      failedDeleteMsg: 'Failed to delete report.',
+      successDeleteMediaMsg: 'Media deleted successfully!',
+      failedDeleteMediaMsg: 'Failed to delete media.'
+    },
+    detail: {
+      title: 'Report Detail',
+      subtitle: 'Complete council activity report information.',
+      dateLabel: 'Activity Date',
+      timeLabel: 'Time',
+      locationLabel: 'Location',
+      participantsLabel: 'Participants',
+      agendaLabel: 'Agenda',
+      resultLabel: 'Result',
+      recommendationLabel: 'Recommendation',
+      descriptionLabel: 'Full Description',
+      reportInfoTitle: 'Report Information',
+      reportTypeLabel: 'Report Type',
+      submitterLabel: 'Submitted By',
+      createdAtLabel: 'Created At',
+      rejectionNoteLabel: 'Rejection Note',
+      editReport: 'Edit Report',
+      mediaTitle: 'Documentation Media',
+      photosLabel: 'Photos',
+      videosLabel: 'Videos',
+      documentsLabel: 'Documents'
+    }
   }
 }

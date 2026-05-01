@@ -21,6 +21,9 @@ import Index from '@/pages/dashboard'
 import CouncilMembers from '@/pages/dashboard/council-members'
 import CouncilForm from '@/pages/dashboard/council-members/form'
 import CouncilDetail from '@/pages/dashboard/council-members/show'
+import CouncilReports from '@/pages/dashboard/council-reports'
+import CouncilReportForm from '@/pages/dashboard/council-reports/form'
+import CouncilReportDetail from '@/pages/dashboard/council-reports/show'
 import DistributionMap from '@/pages/dashboard/distribution-map'
 import EventManagement from '@/pages/dashboard/event-management'
 import EventForm from '@/pages/dashboard/event-management/form'
@@ -100,6 +103,15 @@ export const router = createBrowserRouter([
                   { path: 'create', element: <CouncilForm /> },
                   { path: 'edit/:id', element: <CouncilForm /> },
                   { path: 'show/:id', element: <CouncilDetail /> }
+                ]
+              },
+              {
+                path: 'council-activity-reports',
+                children: [
+                  { index: true, element: <CouncilReports /> },
+                  { path: 'create', element: <CouncilReportForm /> },
+                  { path: 'edit/:id', element: <CouncilReportForm /> },
+                  { path: 'show/:id', element: <CouncilReportDetail /> }
                 ]
               },
               {
