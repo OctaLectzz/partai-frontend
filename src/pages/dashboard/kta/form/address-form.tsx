@@ -41,7 +41,7 @@ export const AddressForm = ({
   const { t } = useTranslation()
 
   return (
-    <Card className="overflow-visible shadow-sm">
+    <Card className="shadow-sm">
       <CardContent className="grid grid-cols-1 gap-6 p-6 md:grid-cols-2">
         <div className="md:col-span-2">
           <h3 className="mb-4 border-b pb-2 text-lg font-bold">{t('dashboard.kta.form.addressSection')}</h3>

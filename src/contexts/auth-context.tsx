@@ -41,6 +41,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       logout()
       toast.error(t('auth.response.sessionExpiredMsg'))
       navigate('/')
+      window.location.reload()
     }
   }, [isError, token, navigate])
 
@@ -56,6 +57,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     setUser(null)
     setToken(null)
     Cookies.remove('token')
+    Cookies.remove('type')
+    Cookies.remove('vite-ui-theme')
   }
 
   return (
