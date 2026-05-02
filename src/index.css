@@ -3,9 +3,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary: #ffd700;
-  --color-primary-dark: #e6c200;
-  --color-primary-light: #ffea70;
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
   --color-dashboard: #f8f9fc;
   --color-dashboard-dark: #0f1117;
   --color-card: var(--color-card);
@@ -27,6 +27,9 @@
 
 /* Light mode base */
 :root {
+  --primary: #ffcb00;
+  --primary-dark: #a38400;
+  --primary-light: #ffd700;
   --color-bg: #ffffff;
   --color-surface: #ffffff;
   --color-surface-hover: #f9fafb;
@@ -41,6 +44,9 @@
 
 /* Dark mode overrides */
 .dark {
+  --primary: #ffd700;
+  --primary-dark: #e6c200;
+  --primary-light: #ffea70;
   --color-bg: #0f1117;
   --color-surface: #1e2030;
   --color-surface-hover: #252840;

@@ -252,14 +252,22 @@ export default {
       successUpdateMsg: 'Event updated successfully!',
       failedUpdateMsg: 'Failed to update event.',
       successDeleteMsg: 'Event deleted successfully!',
-      failedDeleteMsg: 'Failed to delete event.'
+      failedDeleteMsg: 'Failed to delete event.',
+      successRegisterMsg: 'Registration successful!',
+      failedRegisterMsg: 'Failed to register.',
+      successUpdateStatusMsg: 'Status updated successfully!',
+      failedUpdateStatusMsg: 'Failed to update status.',
+      successScanMsg: 'QR scan successful!',
+      failedScanMsg: 'Failed to scan QR.',
+      successDownloadTicketMsg: 'Ticket downloaded successfully.',
+      failedDownloadTicketMsg: 'Failed to download ticket.'
     }
   },
   participants: {
     title: 'Participant List',
     subtitle: 'List of all participants registered for this event.',
     emptyMessage: 'No participants found.',
-    searchPlaceholder: 'Search name, NIK, or email...',
+    searchPlaceholder: 'Search name...',
     code: 'Code',
     name: 'Name',
     nik: 'NIK',
@@ -270,7 +278,10 @@ export default {
     statusLabel: {
       registered: 'Registered',
       attended: 'Attended'
-    }
+    },
+    attendance: 'Attendance',
+    notYet: 'Not Yet',
+    actions: 'Actions'
   },
   massa: {
     title: 'Mass Data',

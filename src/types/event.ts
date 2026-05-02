@@ -1,26 +1,10 @@
+import type { EventParticipant } from './event-participant'
+
 export interface EventCategory {
   id: number
   name: string
   slug: string
   description: string | null
-}
-
-export interface EventParticipant {
-  id: number
-  event_id: number
-  participant_code: string
-  name: string
-  nik: string
-  email: string
-  whatsapp_number: string
-  province_id: string
-  regency_id: string
-  district_id: string
-  village_id: string
-  message: string | null
-  status: string
-  created_at: string
-  updated_at: string
 }
 
 export interface Event {
@@ -39,7 +23,7 @@ export interface Event {
   end_date: string | null
   end_time: string | null
   location: string
-  status: string
+  status: 'draft' | 'published' | 'completed' | 'cancelled'
   created_at: string
   updated_at: string
 }

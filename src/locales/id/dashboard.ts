@@ -252,14 +252,22 @@ export default {
       successUpdateMsg: 'Event berhasil diperbarui!',
       failedUpdateMsg: 'Gagal memperbarui event.',
       successDeleteMsg: 'Event berhasil dihapus!',
-      failedDeleteMsg: 'Gagal menghapus event.'
+      failedDeleteMsg: 'Gagal menghapus event.',
+      successRegisterMsg: 'Pendaftaran berhasil!',
+      failedRegisterMsg: 'Gagal melakukan pendaftaran.',
+      successUpdateStatusMsg: 'Status berhasil diperbarui!',
+      failedUpdateStatusMsg: 'Gagal memperbarui status.',
+      successScanMsg: 'Scan QR berhasil!',
+      failedScanMsg: 'Gagal melakukan scan QR.',
+      successDownloadTicketMsg: 'Tiket berhasil diunduh.',
+      failedDownloadTicketMsg: 'Gagal mengunduh tiket.'
     }
   },
   participants: {
     title: 'Daftar Peserta',
     subtitle: 'Daftar semua peserta yang terdaftar pada event ini.',
     emptyMessage: 'Tidak ada peserta ditemukan.',
-    searchPlaceholder: 'Cari nama, NIK, atau email...',
+    searchPlaceholder: 'Cari nama...',
     code: 'Kode',
     name: 'Nama',
     nik: 'NIK',
@@ -270,7 +278,10 @@ export default {
     statusLabel: {
       registered: 'Terdaftar',
       attended: 'Hadir'
-    }
+    },
+    attendance: 'Kehadiran',
+    notYet: 'Belum',
+    actions: 'Aksi'
   },
   massa: {
     title: 'Data Massa',

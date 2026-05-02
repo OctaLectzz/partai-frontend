@@ -1,5 +1,5 @@
 import { DataTable } from '@/components/ui/data-table'
-import type { EventParticipant } from '@/types/event'
+import type { EventParticipant } from '@/types/event-participant'
 import { getCoreRowModel, getFilteredRowModel, getPaginationRowModel, useReactTable, type ColumnFiltersState } from '@tanstack/react-table'
 import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
