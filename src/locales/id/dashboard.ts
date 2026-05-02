@@ -48,6 +48,34 @@ export default {
       ktaSubtitle: 'Kartu anggota yang baru terdaftar',
       councilTitle: 'Anggota Dewan Terbaru',
       councilSubtitle: 'Anggota dewan yang baru ditambahkan'
+    },
+    charts: {
+      memberGrowthTitle: 'Tren Pertumbuhan Anggota',
+      memberGrowthSubtitle: 'Tren pendaftaran bulanan selama 6 bulan terakhir',
+      massaLabel: 'Data Massa',
+      ktaLabel: 'Anggota KTA',
+      reportTypeTitle: 'Distribusi Jenis Laporan',
+      reportTypeSubtitle: 'Rincian laporan kegiatan dewan berdasarkan jenis',
+      totalLabel: 'Total',
+      eventParticipationTitle: 'Partisipasi Event',
+      eventParticipationSubtitle: 'Event teratas berdasarkan pendaftaran peserta',
+      registeredLabel: 'Terdaftar',
+      targetLabel: 'Target',
+      noEventData: 'Belum ada data partisipasi event.',
+      ageDistributionTitle: 'Distribusi Usia',
+      ageDistributionSubtitle: 'Rincian data massa berdasarkan kelompok usia',
+      ageGroups: {
+        '17-25': '17-25',
+        '26-35': '26-35',
+        '36-45': '36-45',
+        '46-55': '46-55',
+        '56-65': '56-65',
+        '65plus': '65+'
+      },
+      massaStatusTitle: 'Status Keanggotaan',
+      massaStatusSubtitle: 'Anggota data massa aktif vs tidak aktif',
+      activeLabel: 'Aktif',
+      inactiveLabel: 'Tidak Aktif'
     }
   },
   pagination: {

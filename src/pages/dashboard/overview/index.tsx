@@ -6,6 +6,7 @@ import { useMassas } from '@/hooks/use-massa'
 import { useTranslation } from 'react-i18next'
 import { DataDistribution } from './data-distribution'
 import { LatestMembers } from './latest-members'
+import { OverviewCharts } from './overview-charts'
 import { OverviewSummary } from './overview-summary'
 import { QuickActions } from './quick-actions'
 import { RecentEvents } from './recent-events'
@@ -31,12 +32,14 @@ export default function Overview() {
 
       <QuickActions t={t} />
 
+      <OverviewCharts t={t} events={events} massas={massas} ktas={ktas} reports={reports} isLoading={isLoading} />
+
+      <DataDistribution t={t} massas={massas} events={events} isLoading={massasLoading || eventsLoading} />
+
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         <RecentEvents t={t} events={events} isLoading={eventsLoading} />
         <RecentReports t={t} reports={reports} isLoading={reportsLoading} />
       </div>
-
-      <DataDistribution t={t} massas={massas} events={events} isLoading={massasLoading || eventsLoading} />
 
       <LatestMembers t={t} ktas={ktas} councils={councils} isLoading={ktasLoading || councilsLoading} />
     </div>

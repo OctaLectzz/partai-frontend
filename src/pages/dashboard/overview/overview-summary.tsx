@@ -33,7 +33,7 @@ export function OverviewSummary({ t, events, massas, councils, ktas, reports, is
 
   if (isLoading) {
     return (
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {Array.from({ length: 6 }).map((_, i) => (
           <Skeleton key={i} className="h-[100px] rounded-2xl" />
         ))}
@@ -42,7 +42,7 @@ export function OverviewSummary({ t, events, massas, councils, ktas, reports, is
   }
 
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
       <SummaryCard
         title={t('dashboard.overview.summary.totalEvents')}
         value={stats.totalEvents}

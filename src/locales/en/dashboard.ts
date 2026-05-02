@@ -48,6 +48,34 @@ export default {
       ktaSubtitle: 'Recently registered membership cards',
       councilTitle: 'Latest Council Members',
       councilSubtitle: 'Recently added council members'
+    },
+    charts: {
+      memberGrowthTitle: 'Member Growth Trend',
+      memberGrowthSubtitle: 'Monthly registration trend over the last 6 months',
+      massaLabel: 'Mass Data',
+      ktaLabel: 'KTA Members',
+      reportTypeTitle: 'Report Type Distribution',
+      reportTypeSubtitle: 'Council activity reports breakdown by type',
+      totalLabel: 'Total',
+      eventParticipationTitle: 'Event Participation',
+      eventParticipationSubtitle: 'Top events by participant registration',
+      registeredLabel: 'Registered',
+      targetLabel: 'Target',
+      noEventData: 'No event participation data available.',
+      ageDistributionTitle: 'Age Distribution',
+      ageDistributionSubtitle: 'Mass data breakdown by age groups',
+      ageGroups: {
+        '17-25': '17-25',
+        '26-35': '26-35',
+        '36-45': '36-45',
+        '46-55': '46-55',
+        '56-65': '56-65',
+        '65plus': '65+'
+      },
+      massaStatusTitle: 'Membership Status',
+      massaStatusSubtitle: 'Active vs inactive mass data members',
+      activeLabel: 'Active',
+      inactiveLabel: 'Inactive'
     }
   },
   pagination: {
