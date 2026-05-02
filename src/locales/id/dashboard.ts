@@ -1,4 +1,55 @@
 export default {
+  overview: {
+    welcome: 'Selamat datang kembali, {{name}}!',
+    subtitle: 'Berikut ringkasan dashboard manajemen partai Anda.',
+    emptyState: 'Belum ada data tersedia.',
+    summary: {
+      totalEvents: 'Total Event',
+      totalMassa: 'Total Data Massa',
+      totalCouncils: 'Anggota Dewan',
+      totalKta: 'Kartu KTA',
+      totalReports: 'Laporan Kegiatan',
+      approvedReports: 'Laporan Disetujui'
+    },
+    quickActions: {
+      title: 'Aksi Cepat',
+      events: 'Manajemen Event',
+      eventsDesc: 'Buat dan kelola event serta kegiatan partai',
+      massData: 'Data Massa',
+      massDataDesc: 'Kelola data pendukung dan massa partai',
+      council: 'Anggota Dewan',
+      councilDesc: 'Kelola data anggota dewan dan legislatif',
+      kta: 'Digitalisasi KTA',
+      ktaDesc: 'Buat dan kelola kartu tanda anggota digital',
+      reports: 'Laporan Kegiatan',
+      reportsDesc: 'Lihat dan kelola laporan kegiatan dewan',
+      map: 'Peta Sebaran',
+      mapDesc: 'Visualisasi sebaran data massa di berbagai wilayah'
+    },
+    recentEvents: {
+      title: 'Event Terbaru',
+      subtitle: 'Event terbaru yang dibuat dalam sistem'
+    },
+    recentReports: {
+      title: 'Laporan Terbaru',
+      subtitle: 'Laporan kegiatan dewan terbaru'
+    },
+    distribution: {
+      genderTitle: 'Distribusi Gender',
+      genderSubtitle: 'Rincian data massa berdasarkan jenis kelamin',
+      male: 'Laki-laki',
+      female: 'Perempuan',
+      total: 'Total',
+      eventStatusTitle: 'Status Event',
+      eventStatusSubtitle: 'Distribusi event berdasarkan status saat ini'
+    },
+    latestMembers: {
+      ktaTitle: 'Anggota KTA Terbaru',
+      ktaSubtitle: 'Kartu anggota yang baru terdaftar',
+      councilTitle: 'Anggota Dewan Terbaru',
+      councilSubtitle: 'Anggota dewan yang baru ditambahkan'
+    }
+  },
   pagination: {
     perPage: 'Entri per halaman',
     showing: 'Menampilkan',

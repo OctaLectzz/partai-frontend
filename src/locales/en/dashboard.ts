@@ -1,4 +1,55 @@
 export default {
+  overview: {
+    welcome: 'Welcome back, {{name}}!',
+    subtitle: "Here's a summary of your party management dashboard.",
+    emptyState: 'No data available yet.',
+    summary: {
+      totalEvents: 'Total Events',
+      totalMassa: 'Total Mass Data',
+      totalCouncils: 'Council Members',
+      totalKta: 'KTA Cards',
+      totalReports: 'Activity Reports',
+      approvedReports: 'Approved Reports'
+    },
+    quickActions: {
+      title: 'Quick Actions',
+      events: 'Event Management',
+      eventsDesc: 'Create and manage party events and activities',
+      massData: 'Mass Data',
+      massDataDesc: 'Manage supporter and mass data records',
+      council: 'Council Members',
+      councilDesc: 'Manage council and legislative members',
+      kta: 'KTA Digitalization',
+      ktaDesc: 'Generate and manage digital membership cards',
+      reports: 'Activity Reports',
+      reportsDesc: 'View and manage council activity reports',
+      map: 'Distribution Map',
+      mapDesc: 'Visualize mass data distribution across regions'
+    },
+    recentEvents: {
+      title: 'Recent Events',
+      subtitle: 'Latest events created in the system'
+    },
+    recentReports: {
+      title: 'Recent Reports',
+      subtitle: 'Latest council activity reports'
+    },
+    distribution: {
+      genderTitle: 'Gender Distribution',
+      genderSubtitle: 'Mass data breakdown by gender',
+      male: 'Male',
+      female: 'Female',
+      total: 'Total',
+      eventStatusTitle: 'Event Status',
+      eventStatusSubtitle: 'Event distribution by current status'
+    },
+    latestMembers: {
+      ktaTitle: 'Latest KTA Members',
+      ktaSubtitle: 'Recently registered membership cards',
+      councilTitle: 'Latest Council Members',
+      councilSubtitle: 'Recently added council members'
+    }
+  },
   pagination: {
     perPage: 'Entries per page',
     showing: 'Showing',

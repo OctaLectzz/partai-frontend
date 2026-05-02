@@ -17,7 +17,6 @@ import Main from '@/pages/main'
 import Login from '@/pages/auth/login'
 import Register from '@/pages/auth/register'
 
-import Index from '@/pages/dashboard'
 import CouncilMembers from '@/pages/dashboard/council-members'
 import CouncilForm from '@/pages/dashboard/council-members/form'
 import CouncilDetail from '@/pages/dashboard/council-members/show'
@@ -33,6 +32,7 @@ import KtaShow from '@/pages/dashboard/kta/show'
 import MassData from '@/pages/dashboard/mass-data'
 import MassaForm from '@/pages/dashboard/mass-data/form'
 import MassaDetail from '@/pages/dashboard/mass-data/show'
+import Overview from '@/pages/dashboard/overview'
 
 export const router = createBrowserRouter([
   {
@@ -77,7 +77,7 @@ export const router = createBrowserRouter([
             path: '',
             element: <DashboardLayout />,
             children: [
-              { index: true, element: <Index /> },
+              { index: true, element: <Overview /> },
               {
                 path: 'events',
                 children: [
