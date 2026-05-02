@@ -33,7 +33,7 @@ export default function Register() {
   return (
     <div
       className="flex min-h-screen items-center justify-center bg-cover bg-center bg-no-repeat p-4"
-      style={{ backgroundImage: "url('/login-bg.png')" }}
+      style={{ backgroundImage: "url('/img/login-bg.png')" }}
     >
       {/* Dark overlay */}
       <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" />
@@ -43,23 +43,15 @@ export default function Register() {
         <div className="rounded-2xl border border-white/10 bg-white/5 px-8 py-10 shadow-2xl backdrop-blur-2xl">
           {/* Logo */}
           <div className="mb-6 flex justify-center">
-            <div className="border-primary shadow-primary/20 flex h-24 w-24 items-center justify-center overflow-hidden rounded-full border-4 shadow-lg">
-              <img
-                src="/logo.png"
-                alt={t('public.brandName')}
-                className="h-22 w-22 object-contain"
-              />
+            <div className="flex h-24 w-24 items-center justify-center overflow-hidden rounded-full border-4 border-primary shadow-lg shadow-primary/20">
+              <img src="/img/logo/logo.jpeg" alt={t('public.brandName')} className="h-24 w-24 object-contain" />
             </div>
           </div>
 
           {/* Title */}
           <div className="mb-8 text-center">
-            <h1 className="text-2xl font-bold tracking-wide text-white">
-              {t('public.brandName').toUpperCase()}
-            </h1>
-            <h2 className="text-2xl font-bold tracking-wide text-white">
-              {t('auth.register.title').toUpperCase()}
-            </h2>
+            <h1 className="text-2xl font-bold tracking-wide text-white">{t('public.brandName').toUpperCase()}</h1>
+            <h2 className="text-2xl font-bold tracking-wide text-white">{t('auth.register.title').toUpperCase()}</h2>
             <p className="mt-2 text-sm text-gray-400">{t('auth.register.subtitle')}</p>
           </div>
 
@@ -106,13 +98,7 @@ export default function Register() {
             />
 
             <div className="pt-2">
-              <Button
-                type="submit"
-                variant="primary"
-                size="lg"
-                isLoading={isPending}
-                className="w-full"
-              >
+              <Button type="submit" variant="primary" size="lg" isLoading={isPending} className="w-full">
                 {t('auth.register.submitButton')}
               </Button>
             </div>
@@ -120,10 +106,7 @@ export default function Register() {
 
           {/* Login link */}
           <div className="mt-5 text-center">
-            <Link
-              to="/auth/login"
-              className="hover:text-primary text-sm text-gray-400 transition-colors"
-            >
+            <Link to="/auth/login" className="text-sm text-gray-400 transition-colors hover:text-primary">
               {t('auth.register.loginLink')}
             </Link>
           </div>

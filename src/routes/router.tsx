@@ -12,7 +12,7 @@ import DashboardLayout from '@/layouts/dashboard-layout'
 import MainLayout from '@/layouts/main-layout'
 
 // Pages
-import Main from '@/pages/main'
+import Main from '@/pages/main/home'
 
 import Login from '@/pages/auth/login'
 import Register from '@/pages/auth/register'

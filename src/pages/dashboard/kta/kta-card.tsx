@@ -150,7 +150,7 @@ export const KtaCard = forwardRef<HTMLDivElement, KtaCardProps>(({ data, side = 
 
         <div className="flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-full p-1" style={{ backgroundColor: COLORS.white }}>
-            <img src="/logo.png" alt="Logo" className="h-full object-contain" />
+            <img src="/img/logo/logo.jpeg" alt="Logo" className="h-full object-contain" />
           </div>
           <div className="flex flex-col">
             <h2 className="text-lg font-black tracking-widest text-slate-900 uppercase">Partai Golkar</h2>

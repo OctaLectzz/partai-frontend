@@ -72,13 +72,13 @@ export default function Sidebar({ isOpen }: SidebarProps) {
       {/* Header / Logo */}
       <div className={`p-6 transition-all duration-300 ${isOpen ? '' : 'flex justify-center px-4'}`}>
         <div className="flex items-center gap-3 overflow-hidden">
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg border-2 border-primary bg-primary/5">
-            <img src="/logo.png" alt="Logo" className="h-12 w-12 object-contain" />
+          <div className="border-primary bg-primary/5 flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg border-2">
+            <img src="/img/logo/logo.jpeg" alt="Logo" className="h-12 w-12 object-contain" />
           </div>
           {isOpen && (
             <div className="animate-in fade-in slide-in-from-left-2 duration-300">
               <h1 className="text-lg leading-tight font-bold whitespace-nowrap text-gray-900 dark:text-gray-100">
-                PARTAI <span className="font-black text-primary-dark">GOLKAR</span>
+                PARTAI <span className="text-primary-dark font-black">GOLKAR</span>
               </h1>
               <div className="mt-1 inline-flex rounded bg-blue-50 px-2 py-0.5 text-[10px] font-bold tracking-wider text-blue-600 uppercase">
                 {user?.role?.replace('_', ' ') || 'ADMIN'}
