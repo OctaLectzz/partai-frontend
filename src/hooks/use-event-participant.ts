@@ -21,6 +21,15 @@ export const useEventParticipants = (eventSlug: string) => {
   })
 }
 
+export const useEventParticipantsLive = (eventSlug: string, interval = 5000) => {
+  return useQuery<EventParticipant[], AxiosError>({
+    queryKey: ['events', eventSlug, 'participants'],
+    queryFn: () => getEventParticipants(eventSlug),
+    enabled: !!eventSlug,
+    refetchInterval: interval
+  })
+}
+
 export const useRegisterEventParticipant = (eventSlug: string) => {
   const queryClient = useQueryClient()
 
@@ -66,8 +75,7 @@ export const useScanParticipantQr = (eventSlug: string) => {
 
   return useMutation<EventParticipant & { message?: string }, AxiosError<APIErrorResponse>, string>({
     mutationFn: (participantCode) => scanParticipantQr(eventSlug, participantCode),
-    onSuccess: (data) => {
-      toast.success(data.message || t('dashboard.events.response.successScanMsg'))
+    onSuccess: () => {
       Promise.all([
         queryClient.invalidateQueries({ queryKey: ['events', eventSlug, 'participants'] }),
         queryClient.invalidateQueries({ queryKey: ['events', eventSlug] })
@@ -75,7 +83,6 @@ export const useScanParticipantQr = (eventSlug: string) => {
     },
     onError: (err: AxiosError<APIErrorResponse>) => {
       console.error(err.response?.data?.message || t('dashboard.events.response.failedScanMsg'))
-      toast.error(err.response?.data?.message || t('dashboard.events.response.failedScanMsg'))
     }
   })
 }

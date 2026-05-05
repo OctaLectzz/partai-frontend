@@ -18,12 +18,14 @@ export function Navbar({ toggleSidebar }: NavbarProps) {
     const path = location.pathname
     if (path === '/dashboard') return t('dashboard.sidebar.dashboard')
     if (path.includes('/events')) return t('dashboard.sidebar.events')
+    if (path.includes('/mass-data')) return t('dashboard.sidebar.massData')
+    if (path.includes('/council-members')) return t('dashboard.sidebar.councilMembers')
     if (path.includes('/reports')) return t('dashboard.sidebar.reports')
-    if (path.includes('/qr')) return t('dashboard.sidebar.qr')
-    if (path.includes('/gis')) return t('dashboard.sidebar.gis')
+    if (path.includes('/qr-checkin')) return t('dashboard.sidebar.qrCheckin')
+    if (path.includes('/council-activity-reports')) return t('dashboard.sidebar.councilActivityReports')
     if (path.includes('/kta')) return t('dashboard.sidebar.kta')
-    if (path.includes('/wa')) return t('dashboard.sidebar.wa')
-    if (path.includes('/social')) return t('dashboard.sidebar.social')
+    if (path.includes('/whatsapp-blasting')) return t('dashboard.sidebar.whatsAppBlasting')
+    if (path.includes('/distribution-map')) return t('dashboard.sidebar.distributionMap')
     if (path.includes('/profile')) return t('dashboard.navbar.profile')
     if (path.includes('/settings')) return t('dashboard.navbar.settings')
     return 'Dashboard'
@@ -39,9 +41,7 @@ export function Navbar({ toggleSidebar }: NavbarProps) {
           <Menu size={24} />
         </button>
 
-        <h2 className="text-lg font-bold tracking-tight text-gray-900 dark:text-gray-100">
-          {getPageTitle()}
-        </h2>
+        <h2 className="text-lg font-bold tracking-tight text-gray-900 dark:text-gray-100">{getPageTitle()}</h2>
       </div>
 
       <div className="flex items-center gap-4">

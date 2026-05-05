@@ -716,5 +716,81 @@ export default {
       videosLabel: 'Video',
       documentsLabel: 'Dokumen'
     }
+  },
+  qrCheckin: {
+    title: 'Sistem QR & Check-in',
+    subtitle: 'Scan kode QR peserta untuk kehadiran event',
+    selectEvent: {
+      title: 'Pilih Event',
+      subtitle: 'Pilih event yang dipublikasi untuk memulai proses check-in.',
+      searchPlaceholder: 'Cari event...',
+      noEvents: 'Tidak ada event yang dipublikasi.',
+      startCheckin: 'Mulai Check-in',
+      participants: 'Peserta',
+      target: 'Target',
+      registered: 'Terdaftar'
+    },
+    scanner: {
+      cameraTitle: 'Scanner Kode QR',
+      cameraSubtitle: 'Scan kode QR peserta untuk check-in',
+      cameraError: 'Kamera error atau tidak ditemukan',
+      cameraPermission: 'Silakan izinkan akses kamera',
+      startCamera: 'Mulai Kamera',
+      stopCamera: 'Hentikan Kamera',
+      scanning: 'Memindai...',
+      orDivider: 'ATAU',
+      manualInputPlaceholder: 'Masukkan Kode Peserta (misal: P-12345)',
+      scanButton: 'Proses Check-in',
+      backToEvents: 'Kembali ke Event'
+    },
+    modal: {
+      successTitle: 'Check-in Berhasil',
+      errorTitle: 'Check-in Gagal',
+      successMessage: 'Berhasil melakukan check-in!',
+      participantCode: 'Kode Peserta',
+      checkedInAt: 'Waktu Check-in',
+      close: 'Tutup',
+      alreadyCheckedIn: 'Sudah Check-in'
+    },
+    stats: {
+      title: 'Statistik Kehadiran',
+      totalRegistered: 'Total Terdaftar',
+      checkedIn: 'Sudah Hadir',
+      notYet: 'Belum Hadir',
+      attendanceRate: 'Tingkat Kehadiran'
+    },
+    recentCheckins: {
+      title: 'Check-in Terbaru',
+      subtitle: 'Aktivitas check-in peserta terbaru',
+      empty: 'Belum ada check-in.',
+      justNow: 'Baru saja',
+      minutesAgo: '{{count}} menit lalu',
+      hoursAgo: '{{count}} jam lalu'
+    },
+    participantTable: {
+      title: 'Daftar Peserta',
+      subtitle: 'Status kehadiran peserta secara real-time',
+      searchPlaceholder: 'Cari nama atau kode...',
+      code: 'Kode',
+      name: 'Nama',
+      nik: 'NIK',
+      status: 'Status',
+      checkedInAt: 'Waktu Check-in',
+      allStatus: 'Semua Status',
+      registered: 'Terdaftar',
+      attended: 'Hadir',
+      notCheckedIn: 'Belum hadir',
+      emptyMessage: 'Tidak ada peserta ditemukan.',
+      liveIndicator: 'Live'
+    },
+    response: {
+      successCheckin: 'Check-in berhasil!',
+      failedCheckin: 'Check-in gagal.',
+      alreadyCheckedIn: 'Peserta sudah check-in.',
+      invalidCode: 'Kode peserta tidak valid.',
+      wrongEvent: 'Peserta terdaftar di event lain.',
+      eventCancelled: 'Event ini telah dibatalkan.',
+      eventDraft: 'Event ini masih dalam status draft dan belum dibuka untuk check-in.'
+    }
   }
 }

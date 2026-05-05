@@ -33,6 +33,8 @@ import MassData from '@/pages/dashboard/mass-data'
 import MassaForm from '@/pages/dashboard/mass-data/form'
 import MassaDetail from '@/pages/dashboard/mass-data/show'
 import Overview from '@/pages/dashboard/overview'
+import QrCheckin from '@/pages/dashboard/qr-checkin'
+import QrCheckinScanner from '@/pages/dashboard/qr-checkin/scanner'
 
 export const router = createBrowserRouter([
   {
@@ -85,6 +87,13 @@ export const router = createBrowserRouter([
                   { path: 'create', element: <EventForm /> },
                   { path: 'edit/:slug', element: <EventForm /> },
                   { path: 'show/:slug', element: <EventDetail /> }
+                ]
+              },
+              {
+                path: 'qr-checkin',
+                children: [
+                  { index: true, element: <QrCheckin /> },
+                  { path: ':slug', element: <QrCheckinScanner /> }
                 ]
               },
               {

@@ -713,5 +713,81 @@ export default {
       videosLabel: 'Videos',
       documentsLabel: 'Documents'
     }
+  },
+  qrCheckin: {
+    title: 'QR System & Check-in',
+    subtitle: 'Scan participant QR codes for event attendance',
+    selectEvent: {
+      title: 'Select Event',
+      subtitle: 'Choose a published event to start the check-in process.',
+      searchPlaceholder: 'Search events...',
+      noEvents: 'No published events available.',
+      startCheckin: 'Start Check-in',
+      participants: 'Participants',
+      target: 'Target',
+      registered: 'Registered'
+    },
+    scanner: {
+      cameraTitle: 'QR Code Scanner',
+      cameraSubtitle: 'Scan participant QR code to check in',
+      cameraError: 'Camera error or not found',
+      cameraPermission: 'Please grant camera access',
+      startCamera: 'Start Camera',
+      stopCamera: 'Stop Camera',
+      scanning: 'Scanning...',
+      orDivider: 'OR',
+      manualInputPlaceholder: 'Enter Participant Code (e.g., P-12345)',
+      scanButton: 'Process Check-in',
+      backToEvents: 'Back to Events'
+    },
+    modal: {
+      successTitle: 'Check-in Successful',
+      errorTitle: 'Check-in Failed',
+      successMessage: 'Successfully checked in!',
+      participantCode: 'Participant Code',
+      checkedInAt: 'Checked in at',
+      close: 'Close',
+      alreadyCheckedIn: 'Already Checked In'
+    },
+    stats: {
+      title: 'Attendance Statistics',
+      totalRegistered: 'Total Registered',
+      checkedIn: 'Checked In',
+      notYet: 'Not Checked In',
+      attendanceRate: 'Attendance Rate'
+    },
+    recentCheckins: {
+      title: 'Recent Check-ins',
+      subtitle: 'Latest participant check-in activity',
+      empty: 'No check-ins yet.',
+      justNow: 'Just now',
+      minutesAgo: '{{count}} min ago',
+      hoursAgo: '{{count}} hr ago'
+    },
+    participantTable: {
+      title: 'Participant List',
+      subtitle: 'Real-time participant attendance status',
+      searchPlaceholder: 'Search name or code...',
+      code: 'Code',
+      name: 'Name',
+      nik: 'NIK',
+      status: 'Status',
+      checkedInAt: 'Checked-in At',
+      allStatus: 'All Status',
+      registered: 'Registered',
+      attended: 'Attended',
+      notCheckedIn: 'Not checked in',
+      emptyMessage: 'No participants found.',
+      liveIndicator: 'Live'
+    },
+    response: {
+      successCheckin: 'Check-in successful!',
+      failedCheckin: 'Check-in failed.',
+      alreadyCheckedIn: 'Participant already checked in.',
+      invalidCode: 'Invalid participant code.',
+      wrongEvent: 'Participant is registered for a different event.',
+      eventCancelled: 'This event has been cancelled.',
+      eventDraft: 'This event is still in draft and not open for check-in.'
+    }
   }
 }
