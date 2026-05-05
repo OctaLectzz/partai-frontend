@@ -23,5 +23,6 @@
     "html": "class\\s*=\\s*\"([^\"]+)\"",
     "javascript": "(?<=class(Name)?=\\{?\"?)([^\"{]*)(?=\"?\\}?)",
     "typescriptreact": "(?<=class(Name)?=\\{?\"?)([^\"{]*)(?=\"?\\}?)"
-  }
+  },
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }
