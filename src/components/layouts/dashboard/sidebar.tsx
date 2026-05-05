@@ -3,7 +3,7 @@ import { Avatar } from '@/components/ui/avatar'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useAuth } from '@/contexts/auth-context'
 import { useLogout } from '@/hooks/use-auth'
-import { Calendar, FileText, IdCard, LayoutGrid, LogOut, Map, UserCheck, Users } from 'lucide-react'
+import { Calendar, FileText, IdCard, LayoutGrid, LogOut, Map, MessageSquare, QrCode, UserCheck, Users } from 'lucide-react'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, useLocation } from 'react-router-dom'
@@ -43,14 +43,14 @@ export default function Sidebar({ isOpen }: SidebarProps) {
     {
       label: t('dashboard.sidebar.operational'),
       items: [
-        // { title: t('dashboard.sidebar.qrCheckin'), path: '/dashboard/qr-checkin', icon: QrCode },
+        { title: t('dashboard.sidebar.qrCheckin'), path: '/dashboard/qr-checkin', icon: QrCode },
         {
           title: t('dashboard.sidebar.councilActivityReports'),
           path: '/dashboard/council-activity-reports',
           icon: FileText
         },
-        { title: t('dashboard.sidebar.kta'), path: '/dashboard/kta', icon: IdCard }
-        // { title: t('dashboard.sidebar.whatsAppBlasting'), path: '/dashboard/whatsapp-blasting', icon: MessageSquare }
+        { title: t('dashboard.sidebar.kta'), path: '/dashboard/kta', icon: IdCard },
+        { title: t('dashboard.sidebar.whatsAppBlasting'), path: '/dashboard/whatsapp-blasting', icon: MessageSquare }
       ]
     },
     // {
@@ -72,13 +72,13 @@ export default function Sidebar({ isOpen }: SidebarProps) {
       {/* Header / Logo */}
       <div className={`p-6 transition-all duration-300 ${isOpen ? '' : 'flex justify-center px-4'}`}>
         <div className="flex items-center gap-3 overflow-hidden">
-          <div className="border-primary bg-primary/5 flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg border-2">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg border-2 border-primary bg-primary/5">
             <img src="/img/logo/logo.jpeg" alt="Logo" className="h-12 w-12 object-contain" />
           </div>
           {isOpen && (
             <div className="animate-in fade-in slide-in-from-left-2 duration-300">
               <h1 className="text-lg leading-tight font-bold whitespace-nowrap text-gray-900 dark:text-gray-100">
-                PARTAI <span className="text-primary-dark font-black">GOLKAR</span>
+                PARTAI <span className="font-black text-primary-dark">GOLKAR</span>
               </h1>
               <div className="mt-1 inline-flex rounded bg-blue-50 px-2 py-0.5 text-[10px] font-bold tracking-wider text-blue-600 uppercase">
                 {user?.role?.replace('_', ' ') || 'ADMIN'}

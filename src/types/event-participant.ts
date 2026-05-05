@@ -6,7 +6,6 @@ export interface EventParticipant {
   massa_id: number
   massa?: Massa
   participant_code: string
-  qr_code: string | null
   message: string | null
   status: 'registered' | 'attended'
   attended_at: string | null
